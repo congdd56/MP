@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VAS.Dealer", "CRM\VAS.Dealer.csproj", "{885B128E-8F39-4344-B75D-EA0E25FE8D28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP.Common", "Common\MP.Common.csproj", "{97744727-4DB0-49F9-9811-0D100E6BB37F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{41953FA5-0F04-4575-A21A-26D4129ABB61}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{885B128E-8F39-4344-B75D-EA0E25FE8D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885B128E-8F39-4344-B75D-EA0E25FE8D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885B128E-8F39-4344-B75D-EA0E25FE8D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885B128E-8F39-4344-B75D-EA0E25FE8D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97744727-4DB0-49F9-9811-0D100E6BB37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97744727-4DB0-49F9-9811-0D100E6BB37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97744727-4DB0-49F9-9811-0D100E6BB37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97744727-4DB0-49F9-9811-0D100E6BB37F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F3BD429-4E8D-4A65-BB60-AEDEEFEB56ED}
+	EndGlobalSection
+EndGlobal

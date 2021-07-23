@@ -1,0 +1,93 @@
+﻿
+@model VAS.Dealer.Models.CC.AccountModel
+@{
+    ViewData["Title"] = "Thông tin tài khoản";
+    ViewData["SubTitle"] = "Chỉnh sửa thông tin, đổi mật khẩu..";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/modules/manager.js"></script>
+<div class="row">
+    <div class="col-md-6 pr-0">
+        <div class="box box-success">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-info-circle text-success"></i>&nbsp;Thông tin chung</h3>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.Hidden("Id", Model.Id, new { @class = "form-control rounded" })
+                            <label for="UserName">Tài khoản</label>
+                            @Html.TextBox("UserName", Model.UserName, new { @class = "form-control rounded", @required = "", @placeholder = "Tài khoản", @readonly = "true" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="FullName">Họ và tên</label>
+                            @Html.TextBox("FullName", Model.FullName, new { @class = "form-control rounded", @required = "", @placeholder = "Họ và tên" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Email">Số điện thoại</label>
+                            @Html.TextBox("PhoneNumber", Model.PhoneNumber, new
+                            {
+                                @class = "form-control rounded",
+                                @required = "",
+                                @placeholder = "Số điện thoại"
+                            })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            @Html.TextBox("Email", Model.Email, new { @class = "form-control rounded", @required = "", @placeholder = "Email" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="button" id="btn-updateInfo" class="btn btn-flat bg-green-active btn-sm btn-updateInfo">
+                                <i class="fa fa-edit text-white"></i>&nbsp;Cập nhật
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-unlock-alt text-red"></i>&nbsp;Đổi mật khẩu</h3>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="password">Mật khẩu hiện tại</label>
+                            <input type="password" class="form-control" id="password" placeholder="Mật khẩu hiện tại">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="passwordNew">Mật khẩu mới</label>
+                            <input type="password" class="form-control" id="passwordNew" placeholder="Mật khẩu mới">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="passwordConfirm,">Xác nhận lại mật khẩu</label>
+                            <input type="password" class="form-control" id="passwordConfirm" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="button" id="btn-changePassword" class="btn btn-flat bg-green-active btn-sm">
+                            <i class="fa fa-unlock-alt text-white"></i>&nbsp;Đổi mật khẩu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

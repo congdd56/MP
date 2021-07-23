@@ -1,0 +1,309 @@
+﻿#mask {
+    display: none;
+    background: #bbb;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+.login-popup {
+    min-height: 400px;
+    min-width: 600px;
+    display: none;
+    background: #fff;
+    padding: 10px;
+    border: 2px solid #ddd;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    box-shadow: 0px 0px 20px #999;
+    -moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+    -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+fieldset {
+    border: none;
+}
+
+form.signin .textbox input {
+    background: #666666;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #000;
+    border-right: 1px solid #333;
+    border-top: 1px solid #000;
+    color: #fff;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font: 13px Arial, Helvetica, sans-serif;
+    padding: 6px 6px 4px;
+    width: 200px;
+}
+
+form.signin input:-moz-placeholder {
+    color: #bbb;
+    text-shadow: 0 0 2px #000;
+}
+
+form.signin input::-webkit-input-placeholder {
+    color: #bbb;
+    text-shadow: 0 0 2px #000;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+span.spanLangOptions {
+    height: 16px;
+}
+
+    span.spanLangOptions.btn-group.open .dropdown-toggle {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    span.spanLangOptions img {
+        margin-top: -8px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    span.spanLangOptions > ul.dropdown-menu {
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        top: 0px;
+        left: 20px;
+    }
+
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 4px;
+}
+
+table.table.radio.radio-danger > tbody > tr > td {
+    width: 45px;
+    border-top: none;
+}
+
+#mpVocSurvey .checkbox, .radio {
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+#mpVocSurvey label {
+    color: #444;
+    font-weight: 700;
+}
+
+span.link-details-bankingservices {
+    cursor: pointer;
+}
+
+    span.link-details-bankingservices:hover {
+        font-size: 13px;
+    }
+
+
+.sp-lock-card {
+    cursor: pointer;
+    font-size: 18px !important;
+}
+
+.lock-card-f1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+div#toast-container {
+    top: 101px;
+    right: 12px;
+}
+
+.nav > li > a.his-support-voc {
+    padding: 7px 15px;
+}
+
+
+#sw-major-code .sw-container {
+    width: 100%;
+    height: auto !important;
+    min-height: initial !important;
+}
+
+
+#step-accident, #step-report, #step-default {
+    background: transparent;
+}
+
+legend {
+    margin-bottom: 4px;
+    border-bottom: 1px solid #f3a2a2;
+}
+
+
+.timeline > li > .timeline-item > .timeline-body, .timeline > li > .timeline-item > .timeline-footer {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+
+
+tbody#tbdVBICategory {
+    cursor: pointer;
+}
+
+
+
+tbody#tbdInfoSearchInsur ul.drd-tim_ndbh-deltails {
+    top: auto;
+    left: auto;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background: #3c8dbc;
+    color: #fff !important;
+}
+
+tbody#tbdInfoSearchInsur .dropdown-menu > li {
+    cursor: pointer;
+}
+
+    tbody#tbdInfoSearchInsur .dropdown-menu > li > a {
+        color: #fff !important;
+    }
+
+        tbody#tbdInfoSearchInsur .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+            background: #3c8dbc;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+tbody#tbdInfo ul.drd-tim_ndbh-deltails {
+    top: auto;
+    left: auto;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background: #3c8dbc;
+    color: #fff !important;
+}
+
+tbody#tbdInfo .dropdown-menu > li {
+    cursor: pointer;
+}
+
+    tbody#tbdInfo .dropdown-menu > li > a {
+        color: #fff !important;
+    }
+
+        tbody#tbdInfo .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+            background: #3c8dbc;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+.drd-tim_ndbh-deltails:before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 3px 3px 3px;
+    border-color: transparent transparent #3c8dbc transparent;
+    z-index: 9999;
+}
+
+.toast-message {
+    font-size: 12px;
+}
+
+.toast-title {
+    font-size: 13px;
+}
+
+#IB .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 6px 10px;
+}
+
+
+/**
+ * FilePond Custom Styles
+ */
+.filepond--drop-label {
+    color: #4c4e53;
+}
+
+.filepond--label-action {
+    text-decoration-color: #babdc0;
+}
+
+.filepond--panel-root {
+    border-radius: 2em;
+    background-color: #edf0f4;
+    height: 1em;
+}
+
+.filepond--item-panel {
+    background-color: #595e68;
+}
+
+.filepond--drip-blob {
+    background-color: #7f8a9a;
+}
+
+.filepond--drop-label.filepond--drop-label label {
+    font-size: 15px !important;
+}
+
+a.filepond--credits {
+    display: none !important;
+}
+
+.panel-RProductColor span.select2-selection__arrow, .panel-DTransfer span.select2-selection__arrow {
+    display: none !important;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+    background-color: #fff;
+    cursor: default;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+
+table#tbl-list-tech, table#tbl-list-station, table#tbl-list-cs {
+    width: 100% !important;
+}

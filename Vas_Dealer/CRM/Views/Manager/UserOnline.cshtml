@@ -1,0 +1,47 @@
+﻿@model List<VAS.Dealer.Models.CRM.UserOnlineModel>
+
+@using MP.Common
+@{
+    ViewData["Title"] = "Tài khoản đăng nhập";
+    ViewData["SubTitle"] = "Đăng nhập hệ thống, chưa đăng xuất";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="box box-warning">
+    <div class="box-header with-border">
+        <h3 class="box-title"><i class="ion ion-clipboard"></i>&nbsp;Danh sách</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="box-body">
+        <table class="table table-bordered online">
+            <thead>
+                <tr>
+                    <th class="vertical-middle text-center">#</th>
+                    <th>Tài khoản</th>
+                    <th>Họ tên</th>
+                    <th>Thời gian đăng nhập</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="vertical-middle text-center">@item.STT</td>
+                            <td>@item.UserName</td>
+                            <td>@item.FullName</td>
+                            <td>@item.LoginDateStr</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="~/modules/manager/useronline.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>

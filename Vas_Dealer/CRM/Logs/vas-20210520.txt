@@ -1,0 +1,11 @@
+2021-05-20T15:15:54.1409288+07:00 8000000e-0002-fb00-b63f-84710c7967bb [ERR] Error listing directory '/'.
+The server cannot open connection in active mode. If you are behind a NAT router, you may need to specify an external IP address. Alternatively, consider switching to passive mode.
+Could not retrieve directory listing
+Failed to establish connection. (2467fc58)
+2021-05-20T15:15:54.3588873+07:00 8000000e-0002-fb00-b63f-84710c7967bb [ERR] Client does not have permission to submit mail to this server. The server response was: 4.7.0 STARTTLS required (a600cf84)
+System.Net.Mail.SmtpException: Client does not have permission to submit mail to this server. The server response was: 4.7.0 STARTTLS required
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at VAS.Dealer.Services.EmailServices.SendWarningFtpError(String exception) in D:\MinhPhuc\Projects\2021\Vas_Dealer\CRM\Services\EmailServices.cs:line 127

@@ -1,0 +1,58 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/Agent/AgentsWithExten",
+            dataType: "json",
+            success: function (msg) {
+                var html = "";
+                if (msg.length > 0) {
+                    html = '';
+                    msg.forEach(r => {
+                        html += '<tr>';
+                        html += '<td class="p-0">';
+                        html += '<a href="javascript:void(0);" onclick="getDataSelected(this)" data-data="' + r.Extension + '" class="d-block p-3 position-relative">';
+                        html += '<input type="radio" id="exc-' + r.UserName + '" name="sltExchange" class="w-100">';
+                        html += '<label for="exc-' + r.UserName + '" class="h-100 mb-0 position-absolute w-100 lbl-checked"></label>';
+                        html += '</a>';
+                        html += '</td>';
+                        html += '<td>' + r.UserName + '</td>';
+                        html += '<td>' + r.Extension + '</td>';
+                        html += '<td>' + r.Status + '</td>';
+                        html += '</tr>';
+                    });
+                } else {
+                    html += '<tr>';
+                    html += '<td colspan="4" class="text-center">Không có số nội bộ nào đang sẵn sàng</td>';
+                    html += '</tr>';
+                }
+                $('.tblBodyAgent').html(html);
+            }
+        });
+    });
+    function getDataSelected(evt) {
+        $('input.channel').value = $(evt).attr('data-data');
+        $('input.channel').attr('value', $(evt).attr('data-data'))
+    }
+</script>
+<div class="col-md-12 p-0">
+    <input type="text" hidden class="channel">
+    <table class="tablesaw table-bordered" data-tablesaw-mode="stack">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tài khoản</th>
+                <th>Số nội bộ</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody class="tblBodyAgent"></tbody>
+    </table>
+</div>
+<style type="text/css">
+    label.lbl-checked {
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+</style>

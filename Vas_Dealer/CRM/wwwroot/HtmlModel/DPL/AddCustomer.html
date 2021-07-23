@@ -1,0 +1,65 @@
+﻿<div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>Loại</label>
+                <select id="ddlRPopCreateStoreType" class="form-control input-sm select2" style="width: 100%">
+                    <option value="">-Chọn-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>Tên cửa hàng, đại lý</label>
+                <input type="text" class="form-control input-sm" placeholder="Tên cửa hàng, đại lý" id="txtRPopCreateStoreName">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="text" id="txtRPopCreateStorePhone" class="form-control input-sm"
+                       oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\\..*)\\./g, '$1');" />
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>Người liên hệ</label>
+                <input type="text" id="txtRPopCreateContactName" class="form-control input-sm" />
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>Khu vực</label>
+                <select id="ddlRPopCreateStoreArea" class="form-control input-sm select2" style="width: 100%">
+                    <option value="">-Chọn-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>
+                    Tỉnh, T/P
+                </label>
+                <select id="ddlRPopCreateStoreProvince" class="form-control input-sm select2" style="width: 100%">
+                    <option value="">-Chọn-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>Huyện</label>
+                <select id="ddlRPopCreateStoreDistrict" class="form-control input-sm select2" style="width: 100%">
+                    <option value="">-Chọn-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="form-group">
+                <label>
+                    Địa chỉ
+                </label>
+                <input id="txtRPopCreateStoreAddress" placeholder="Nhập địa chỉ" class="form-control input-sm" />
+            </div>
+        </div>
+    </div>
+</div>

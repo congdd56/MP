@@ -1,0 +1,111 @@
+﻿@using Newtonsoft.Json
+@using MP.Common
+@using System.Security.Claims
+@model List<VAS.Dealer.Models.VAS.VendorResponseModel>
+@{
+    ViewData["Title"] = "Quản lý đại lý";
+    ViewData["SubTitle"] = "VAS vendor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var claimsIdentity = User.Identity as ClaimsIdentity;
+    var lstPermission = JsonConvert.DeserializeObject<List<string>>(Context.User.Claims.First(c => c.Type == "permission").Value);
+}
+
+<div class="box box-info">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box box-widget">
+                <div class="box-header">
+                    <h3 class="box-title clearfix"><i class="ion ion-clipboard"></i> Tạo mới đại lý</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Tên đại lý <span class="text-danger">*</span></label>
+                                <input class="form-control input-sm" id="txtName" type="text"
+                                       placeholder="Tên đại lý tối đa 250 ký tự" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Số điện thoại <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">+84</span>
+                                    <input class="form-control input-sm" id="txtPhone"
+                                           placeholder="Số điện thoại, bỏ nhập số 0 ở đầu. eg: 965558888" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        @if (lstPermission.Contains(MPConst.vendor_add))
+                        {
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-flat btn-sm btn-success btn-create">
+                                        <i class="fa fa-save"></i> Tạo mới
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="box box-widget">
+                <div class="box-header">
+                    <h3 class="box-title"><i class="fa fa-clipboard"></i>&nbsp;Danh sách đại lý</h3>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered data">
+                        <thead>
+                            <tr role="row">
+                                <th>#</th>
+                                <th>Tên đại lý</th>
+                                <th>Mã đại lý</th>
+                                <th>Số điện thoại</th>
+                                <th>Ngày tạo</th>
+                                <th>Người tạo</th>
+                                <th>Công cụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null && Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.STT</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Code</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.CreatedDateStr</td>
+                                        <td>@item.CreatedBy</td>
+                                        <td class="text-center" style="vertical-align: middle">
+                                            @if (lstPermission.Contains(MPConst.vendor_edit))
+                                            {
+                                                <span class="editVendor" uid="@item.Code">
+                                                    <i class="fa fa-edit fa-lg text-primary mp-pointer-st pointer mx-1" alt="edit" title="Sửa tài khoản"></i>
+                                                </span>
+                                            }
+                                            @if (lstPermission.Contains(MPConst.vendor_delete))
+                                            {
+                                                <span class="deleteVendor" uid="@item.Code">
+                                                    <i class="fa fa-trash-o fa-lg text-danger mp-pointer-st pointer mx-1" alt="delete" title="Xóa tài khoản"></i>
+                                                </span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/modules/vas/vendor.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>

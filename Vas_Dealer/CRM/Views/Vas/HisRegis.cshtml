@@ -1,0 +1,27 @@
+﻿@using MP.Common
+@{
+    ViewData["Title"] = "Lịch sử quay may mắn / ";
+    ViewData["SubTitle"] = "Điểm số sẽ được tính từ cao xuống thấp -> 10 người ở cuối bảng xếp hạng sẽ bị thua";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box box-widget"> 
+    <div class="box-body"> 
+        <div class="box box-primary"> 
+            <div class="box-body">
+                <table class="table table-bordered data">
+                    <thead>
+                        <tr role="row">
+                            <th>Xếp hạng</th>
+                            <th>Tài khoản</th>
+                            <th>Họ và tên</th> 
+                            <th>Điểm</th> 
+                        </tr>
+                    </thead>
+                    <tbody id="bdList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/modules/vas/hisregis.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>

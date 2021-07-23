@@ -1,0 +1,51 @@
+﻿@using MP.Common
+@model VAS.Dealer.Models.VAS.VINAService.LayDanhSachGoiDichVuResponseModel
+@{
+    ViewData["Title"] = "Danh sách dịch vụ";
+    ViewData["SubTitle"] = "VAS Dealer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #tblList tr th {
+        white-space: nowrap;
+        text-align: center;
+    }
+</style>
+<div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title clearfix"><i class="ion ion-clipboard"></i> Danh sách dịch vụ</h3>
+    </div>
+    <div class="box-body">
+        <table class="table table-bordered table-striped data">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Loại DV</th>
+                    <th>Mã dịch vụ</th>
+                    <th>Giá</th>
+                    <th>Trạng thái</th>
+                    <th>Mô tả</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Result != null && Model.Result.Count > 0)
+                {
+                    foreach (var item in Model.Result)
+                    {
+                        <tr>
+                            <td>@item.STT</td>
+                            <td>@item.LOAI_DVU</td>
+                            <td>@item.DVU</td>
+                            <td>@item.GIA</td>
+                            <td>@item.TTHAI</td>
+                            <td>@item.MT</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/modules/vas/service.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>

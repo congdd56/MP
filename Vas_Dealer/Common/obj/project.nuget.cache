@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "X1ZpajnaNXLaxQTCyoqY9U8b+meky9sIA092+I5FvPBuZRlGr/ACg2sKDZTqFsqjaJGa2oudXYlTGx0L9NFnPg==",
+  "success": true,
+  "projectFilePath": "F:\\Project\\Vas_Dealer\\Common\\MP.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

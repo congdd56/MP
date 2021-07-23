@@ -1,0 +1,2938 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VAS.Dealer</name>
+    </assembly>
+    <members>
+        <member name="T:VAS.Dealer.Authentication.MPAuthorizeAttribute">
+            <summary>
+            Check permittion follow by:
+            User and Role  --> OR
+            Permission , [Object|Operation]   --> AND
+            Object|Operation is couple define a Permission
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Authentication.EnsureUserLoggedIn">
+            <summary>
+            Xử lý kiểm tra tài khoản có đang đăng nhập không
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Authentication.MPController.PermisTeamleader">
+            <summary>
+            Danh sách Teamleader ở tab kỹ thuật
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Authentication.MPController.Permissions">
+            <summary>
+            Danh sách chức năng của tài khoản được phép
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Authentication.MPBaseController.Permissions">
+            <summary>
+            Danh sách chức năng của tài khoản được phép
+            </summary>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.CDRController.PrefixRegis1Day(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            PrefixRegis1Day
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.CDRController.PrefixRegis30(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            PrefixRegis30
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.CDRController.PrefixRenew1Day(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            PrefixRegis30
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.CDRController.CDRRegis(VAS.Dealer.Models.VAS.PagingCDRRequestModel)">
+            <summary>
+            CDR regis
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.CDRController.GetSchedule">
+            <summary>
+            Lấy lịch chạy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.AccountController.LogOut">
+            <summary>
+            Đăng xuất
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.AccountController.Info">
+            <summary>
+            Thông tin tài khoản hiện tại
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.AccountController.AccountSetting(VAS.Dealer.Models.CC.AccountModel)">
+            <summary>
+            Cập nhật thông tin tài khoản
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.AccountController.AddAccount(VAS.Dealer.Models.CC.AccountModel)">
+            <summary>
+            Tạo mới tài khoản
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.AccountController.GetCode(System.String)">
+            <summary>
+            Quên mật khẩu
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.AccountController.RecoveryPassword(System.String,System.String,System.String)">
+            <summary>
+            Rest mật khẩu
+            </summary>
+            <param name="userName"></param>
+            <param name="code"></param>
+            <param name="NewPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.Index">
+            <summary>
+            Màn hình tài khoản, quyền, danh mục...
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.GetTree">
+            <summary>
+            Lấy cây thư mục cho danh mục
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.GetCategoryByCatTypeId(System.Int32)">
+            <summary>
+            Lấy danh sách category theo catTypeId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.UpdateCategory(VAS.Dealer.Models.Entities.MP_Category)">
+            <summary>
+            Cập nhật danh mục
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.InsertCategory(VAS.Dealer.Models.Entities.MP_Category)">
+            <summary>
+            Thêm mới danh mục
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.AddCatType(VAS.Dealer.Models.Entities.MP_CatType)">
+            <summary>
+            Cập nhật danh mục
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.DeleteCategory(System.Int32)">
+            <summary>
+            Xóa danh mục
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.SaveEmailConfig(VAS.Dealer.Models.CRM.MailConfigModel)">
+            <summary>
+            Lưu thông tin cấu hình email
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.ManagerController.SaveEmailContent(VAS.Dealer.Models.CRM.MailConfigModel)">
+            <summary>
+            Lưu nội dung của email
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.PermissionController.ListPermission">
+            <summary>
+            lấy dang sách chức năng
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.PermissionController.ListGroupPermissionByRole(System.Int32)">
+            <summary>
+            Lấy Nhóm chức năng theo ID
+            </summary>
+            <param name="RoleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.PermissionController.UpdateRole(VAS.Dealer.Models.CC.RolePerModel)">
+            <summary>
+            UpdateRole cập nhật quyền
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.PermissionController.AddRole(VAS.Dealer.Models.CC.RolePerModel)">
+            <summary>
+            AddRole Tạo mới quyền
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.HisRegis">
+            <summary>
+            Tra cứu
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.ExportWarrantyArise(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Xuất excel Báo cáo Đăng ký
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.Service">
+            <summary>
+            Danh sách sự vụ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.Vendor">
+            <summary>
+            Màn hình
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.ListVendor">
+            <summary>
+            Danh sách đại lý
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.CreateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel)">
+            <summary>
+            Tạo mới đại lý
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.VendorInfo(System.String)">
+            <summary>
+            Lấy thông tin đại lý theo mã
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.UpdateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel)">
+            <summary>
+            Cập nhật đại lý
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.DeleteVendor(VAS.Dealer.Models.VAS.VINAService.XoaDaiLyRequestModel)">
+            <summary>
+            Xóa đại lý
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.Register">
+            <summary>
+            Màn hình
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.RegisterPhone(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel)">
+            <summary>
+            Mời gói
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.ExtendPhone(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel)">
+            <summary>
+            Gia hạn gói
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Controllers.VASController.RegisteredHistory(VAS.Dealer.Models.VAS.PagingRequestModel)">
+            <summary>
+            Lịch sử đăng ký mới thuê bao theo tài khoản
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:VAS.Dealer.Models.CIC.AgentMissCallDetailResponseModel.CallId">
+            <summary>
+            Mã cuộc gọi
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CC.AccountModel.SignalStatus">
+            <summary>
+            Hiện thị trạng thái online offline theo signalr
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CC.ChanSpyModel.SUPUserName">
+            <summary>
+            Tài khoản của SUP đi nghe xen
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CC.ChanSpyModel.SUPExtension">
+            <summary>
+            Số nội bộ của SUP đi nghe xen
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CC.ChanSpyModel.Extension">
+            <summary>
+            Số nội bộ bị nghe xen
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.ProductDetialByModelModel.ProductCapacity">
+            <summary>
+            Dung tích/ công xuất
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.CustomerSearchRequest.Type">
+            <summary>
+            Loại khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.CustomerSearchRequest.Code">
+            <summary>
+            Mã
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.CustomerSearchRequest.Area">
+            <summary>
+            Khu vực
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.CustomerSearchRequest.Province">
+            <summary>
+            Tỉnh
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.CustomerSearchRequest.District">
+            <summary>
+            Huyện
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.FTPConfigModel.PrefixRegis30">
+            <summary>
+            Tiền tố của file ftp
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.FTPConfigModel.DownloadPath">
+            <summary>
+            Đường dẫn tải về từ ftp
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.UserLogonModel.PermisTeamleader">
+            <summary>
+            Quyền teamleader ở phòng kỹ thuật
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.ProductStatus">
+            <summary>
+            Tình trạng hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.CurrentTicketStatus">
+            <summary>
+            Hiện trạng xử lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.ProductCrashStatus">
+            <summary>
+            Tình trạng hư hỏng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.ReceiveContent">
+            <summary>
+            Nội dung trao đổi với KH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.IsWarranty">
+            <summary>
+            Đạt điều kiện bảo hành hay không
+            True: đạt, False: không
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.AttachFileInvoice">
+            <summary>
+            Đính kèm file hóa đơn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.AttachFileTemp">
+            <summary>
+            Đính kèm file mẫu sản phẩm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOCReceiveTicketModel.AttachFileTTHH">
+            <summary>
+            Đính kèm file tình trạng hàng hóa
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_ExportTicket.CreatedDateCSStr">
+            <summary>
+            Ngày Bắt đầu CS
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_ExportTicket.SumTotalCS">
+            <summary>
+            Tổng thời gian CS
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.TicketId">
+            <summary>
+            Mã sự vụ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.RetailCMName">
+            <summary>
+            Tên khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.NumSeqRetailCM">
+            <summary>
+            Mã khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.ProductModel">
+            <summary>
+            Model
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.ProductSeri">
+            <summary>
+            Serial
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.ProductColor">
+            <summary>
+            Màu
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.TicketChannel">
+            <summary>
+            Kênh tiếp nhận
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.PHONE">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.ReceiveContent">
+            <summary>
+            Nội dung trao đổi với KH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.SEGMENTID_Name">
+            <summary>
+            Khu vực
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.SUBSEGMENTID_name">
+            <summary>
+            Tỉnh thành
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.SALESDISTRICTID_Name">
+            <summary>
+            Huyện
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.STREET">
+            <summary>
+            Địa chỉ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.TicketStatus">
+            <summary>
+            Hiện trạng xử lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.CreatedBy">
+            <summary>
+            Người Tiếp nhận
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.CreatedDateStr">
+            <summary>
+            Ngày tạo
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.TakeCareBy">
+            <summary>
+            Nhân viên chăm sóc
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.CreatedDateCSStr">
+            <summary>
+            Ngày Bắt đầu CS
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.CompletedDateStr">
+            <summary>
+            Hoàn thành CS
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.SumTotalCS">
+            <summary>
+            Tổng thời gian CS
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.Solution">
+            <summary>
+            Hướng xử lý sau CS
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.CurrentStatus">
+            <summary>
+            Hiện trạng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.Steeps">
+            <summary>
+            Các bước chăm sóc
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.TakeCareContent">
+            <summary>
+            Nội dung chăm sóc
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.CRM.VOC_SearchTicket.Note">
+            <summary>
+            Ghi chú
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.CheckMPLoadElSerialModel.IsFound_MPLoadEWarrantyView">
+            <summary>
+            Trường hợp tìm thấy ở MPLoadEWarrantyView
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.CheckMPLoadElSerialModel.INVOICEDATE">
+            <summary>
+            Sử dụng cho báo cáo CA bảo hành tính phí
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.CheckMPLoadEWarrantyViewRequestModel.ItemGroup">
+            <summary>
+            Loại nghành hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.CheckMPLoadEWarrantyViewRequestModel.DocDate">
+            <summary>
+            Thời gian mua hàng, người dùng nhập
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.CheckMPLoadEWarrantyViewRequestModel.InvoiceDate">
+            <summary>
+            Thời gian mua hàng, lấy từ service trước
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.NumSeqRetailCM">
+            <summary>
+            Mã khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.PHONE">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.SEGMENTID">
+            <summary>
+            Mã khu vực
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.SEGMENTID_Name">
+            <summary>
+            Tên khu vực
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.STREET">
+            <summary>
+            Địa chỉ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.SUBSEGMENTID">
+            <summary>
+            Mã tỉnh
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.SUBSEGMENTID_name">
+            <summary>
+            Tên tỉnh
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.RetailCMName">
+            <summary>
+            Tên khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.SALESDISTRICTID">
+            <summary>
+            Mã huyện
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.SALESDISTRICTID_Name">
+            <summary>
+            Tên huyện
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.SALESDISTRICTID_Key">
+            <summary>
+            Key lưu phía MP
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.DPLCustomerModel.RetailCMTyple">
+            <summary>
+            Loại khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.GetMPLoadPKTTTKTModel.NumSeqPKTTTKT">
+            <summary>
+            Mã phiếu KT TTKT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.GetMPLoadPKTTTKTModel.Status">
+            <summary>
+            Trạng thái
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.GetMPLoadPKTTTKTModel.TransDateCreate">
+            <summary>
+            Ngày tạo phiếu KT TTKT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.GetMPLoadPKTTTKTModel.TransDateCreateStr">
+            <summary>
+            Ngày tạo phiếu KT TTKT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.InsertMPUpPhieuKTTTKTModel.CategoryID">
+            <summary>
+            Sang nói
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.InsertMPUpPhieuKTTTKTModel.MPStatus">
+            <summary>
+            Mặc định là ASC, Sang nói thế
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.InsertMPUpPhieuKTTTKTModel.MerchandiseStatus">
+            <summary>
+            Tình trạng hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.InsertMPUpPhieuKTTTKTModel.ProductStatus">
+            <summary>
+            Tình trạng hư hỏng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.Intergration.MPLoadPKTTTKTModel.DateClose">
+            <summary>
+            Định dạng dd/MM/yyyy
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.Intergration.MPLoadPKTTTKTModel.DateCreate">
+            <summary>
+            Định dạng dd/MM/yyyy
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.Intergration.MPLoadPKTTTKTModel_V2.DateClose">
+            <summary>
+            Định dạng dd/MM/yyyy
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.Intergration.MPLoadPKTTTKTModel_V2.DateCreate">
+            <summary>
+            Định dạng dd/MM/yyyy
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.DPL.Intergration.MPLoadDNCLKPTModel.Transport">
+            <summary>
+            Hình thức vận chuyển
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.Entities.CIC.Store.RP_Agent_Productivity">
+            <summary>
+            Báo cáo năng suất điện thoại viên
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.CIC.VipBlacklistResponseModel.PhoneNumber">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.CIC.VipBlacklistResponseModel.Code">
+            <summary>
+            loại danh sách
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.CIC.VIP_BLACK_List.PhoneNumber">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.CIC.VIP_BLACK_List.PhoneType">
+            <summary>
+            loại danh sách
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.DPL.DPL_MPLoadDNCLKPT.Transport">
+            <summary>
+            Hình thức vận chuyển
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_ReceiveTicket.IsWarranty">
+            <summary>
+            Đạt điều kiện bảo hành hay không
+            True: đạt, False: không
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_ReceiveTicket.AttachFiles">
+            <summary>
+            Danh sách file đính kèm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.Station">
+            <summary>
+            Thông tin trạm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.ErrorSatus">
+            <summary>
+            Tình trạng lỗi KT SP
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.ErrorCategory">
+            <summary>
+            Danh mục mã lỗi
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.ShippingWithDrawNumber">
+            <summary>
+            Số vận đơn rút LK/HH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.ReceiveDate">
+            <summary>
+            Ngày nhận LK/HH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.WithdrawStatus">
+            <summary>
+            Trạng thái vận đơn rút LKPT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.EnumerationNumber">
+            <summary>
+            Số bảng kê SC-KĐ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.EnumerationDate">
+            <summary>
+            Ngày lên bảng kê SC-KĐ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.EnumerationCompleteDate">
+            <summary>
+            Ngày hoàn thành
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.LastHandlerStatus">
+            <summary>
+            Trạng thái xử lý cuối cùng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.HandlerExpectedDate">
+            <summary>
+            Ngày dự kiến làm xong
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.HandlerCompleteDate">
+            <summary>
+            Ngày xử lý xong
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.Process">
+            <summary>
+            Quá trình xử lý xong
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.Entities.VOC_StationTicket.ReportMonth">
+            <summary>
+            Tháng trạm làm báo cáo
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.APIResponseModel.ErrorCode">
+            <summary>
+            Mã lỗi trả về(0: thành công, còn lại là lỗi)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.APIResponseModel.Message">
+            <summary>
+            Thông báo chi tiết thành công hoặc lỗi
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.LoginResponseModel.ErrorCode">
+            <summary>
+            Mã lỗi trả về(0: thành công, còn lại là lỗi)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.LoginResponseModel.Message">
+            <summary>
+            Thông báo chi tiết thành công hoặc lỗi
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.LoginResponseModel.Session">
+            <summary>
+            Trả về khi đăng nhập thành công
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.LoginResponseModel.TradeKey">
+            <summary>
+            Mã giao dịch
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.LayDanhSachGoiDichVuResponseModel.ErrorCode">
+            <summary>
+            Mã lỗi trả về(0: thành công, còn lại là lỗi)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel.branch_code">
+            <summary>
+            Mã đại lý con cần tạo
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel.branch_name">
+            <summary>
+            Tên đại lý con cần tạo
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel.branch_mobile">
+            <summary>
+            Số điện thoại đại lý con cần tạo mới
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.TimKiemDaiLy.p_code">
+            <summary>
+            Mã đại lý, p_code = "" thì lấy tât cả danh sách đại lý thuộc đại lý đăng nhập
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.TimKiemDaiLyResponseModel.ErrorCode">
+            <summary>
+            Mã lỗi trả về(0: thành công, còn lại là lỗi)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoi.so_tb">
+            <summary>
+            Số thuê bao đại lý muốn mời
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoi.service_code">
+            <summary>
+            Gói dịch vụ muốn mời
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoi.branch_code">
+            <summary>
+            Mã đại lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel.PhoneNumber">
+            <summary>
+            Số thuê bao đại lý muốn mời
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel.Service">
+            <summary>
+            Gói dịch vụ muốn mời
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel.Branch">
+            <summary>
+            Mã đại lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.SuaThongTinDaiLy.branch_code">
+            <summary>
+            Mã đại lý con
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.SuaThongTinDaiLy.branch_name">
+            <summary>
+            Tên đại lý con
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.SuaThongTinDaiLy.branch_mobile">
+            <summary>
+            Số điện thoại đại lý con
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.SuaThongTinDaiLy.branch_tel">
+            <summary>
+            Số tel
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.SuaThongTinDaiLy.address">
+            <summary>
+            Địa chỉ đại lý con
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.SuaThongTinDaiLy.description">
+            <summary>
+            Mô tả
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.XoaDaiLy.branch_code">
+            <summary>
+            Mã đại lý con
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.XoaDaiLy.description">
+            <summary>
+            Mô tả
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.XoaDaiLyRequestModel.BranchCode">
+            <summary>
+            Mã đại lý con
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.XoaDaiLyRequestModel.Reasion">
+            <summary>
+            lý do
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHan.so_tb">
+            <summary>
+            Số thuê bao đại lý muốn mời gia hạn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHan.service_code">
+            <summary>
+            Gói dịch vụ muốn mời gia hạn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHan.branch_code">
+            <summary>
+            Mã đại lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel.PhoneNumber">
+            <summary>
+            Số thuê bao đại lý muốn mời gia hạn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel.Service">
+            <summary>
+            Gói dịch vụ muốn mời gia hạn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel.Branch">
+            <summary>
+            Mã đại lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.DisplayReceiveModel.CloseArea">
+            <summary>
+            Khu vực đóng case
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.DisplayReceiveModel.CallArea">
+            <summary>
+            Khu vực số điện thoại gọi đến, tên khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.DisplayReceiveModel.DNO">
+            <summary>
+            Khu vực nhập yêu cầu 1 - 13
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.DisplayReceiveModel.RNO">
+            <summary>
+            Khu vực RNO xử lý
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.ReceiveRequestModel">
+            <summary>
+            Thông tin tiếp nhận khi lưu ticket
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.Phone_ProductHistory">
+            <summary>
+            Lịch sử thông tin sản phẩm theo số điện thoại
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.Phone_DocHistory">
+            <summary>
+            Lịch sử thông tin chứng từ theo số điện thoại
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_Channel">
+            <summary>
+            Kênh tiếp nhận
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_ProductStatus">
+            <summary>
+            Tình trạng hàng hóa
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_ProductType">
+            <summary>
+            Loại sản phẩm (Loại ngành hàng)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_ProductModel">
+            <summary>
+            Model sản phẩm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_ProductModel2">
+            <summary>
+            Model dàn nóng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_ProductColor">
+            <summary>
+            Mầu sản phẩm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_CurrentTicketStatus">
+            <summary>
+            Hiện trạng xử lý(Tiếp nhận)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_CrashStatus">
+            <summary>
+            Tình trạng hư hỏng(Thuộc MP)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_DErrorCategory">
+            <summary>
+            Danh mục mã lỗi tab Tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_Source">
+            <summary>
+            Nguồn nhận
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_CustomerStatus">
+            <summary>
+            Trạng thái KH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_Purpose">
+            <summary>
+            Mục đích
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_Area">
+            <summary>
+            Khu vực
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_Province">
+            <summary>
+            Tỉnh, T/P cửa hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_District">
+            <summary>
+            Quận/ Huyện cửa hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_StoreType">
+            <summary>
+            Loại cửa hàng đại lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.FirstTabDisplayReceive">
+            <summary>
+            Thiết lập tab active trên giao diện VOC
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_DocutmentType">
+            <summary>
+            Loại chứng từ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_OtherDocutmentType">
+            <summary>
+            Loại chứng từ khác -> Khi chọn khác ở loại chứng từ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.R_SpecicialDisplay">
+            <summary>
+            Khi chọn loại ngành hàng có mã trùng khớp thì mới hiển thị
+            Model dàn nóng, Số serial(dàn nóng)
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.D_SolutionAfterDiscus">
+            <summary>
+            Hướng xử lý sau tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.D_TranferDiscus">
+            <summary>
+            Chuyển tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.D_ListDiscus">
+            <summary>
+            Danh sách tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.D_ErrorCategory">
+            <summary>
+            Danh mục mã lỗi
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.T_StationInfo">
+            <summary>
+            Thông tin trạm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.T_TranTeamleader">
+            <summary>
+            Chuyển Teamleader
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.T_TranEmployee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.T_SolutionAfterDiscus">
+            <summary>
+            Hướng xử lý sau tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.T_IsTeamleader">
+            <summary>
+            Kiểm tra với ticket và khu vực cửa hàng, KH để ra được teamleader
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.S4_LastHandlerStatus">
+            <summary>
+            Trạng thái xử lý cuối cùng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.C_CurrentStatus">
+            <summary>
+            Hiện trạng/ chăm sóc sau sửa chữa
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.C_TakeCareStep">
+            <summary>
+            Các bước chăm sóc
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveIndexModel.C_TakeCareBy">
+            <summary>
+            Nhân viên chăm sóc
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveListModel.ListCurrentStatus">
+            <summary>
+            Hiện trạng xử lý
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.ReceiveRequestCallCenterModel">
+            <summary>
+            Từ tổng đài
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveRequestCallCenterModel.RegisterDateStr">
+            <summary>
+            Ngày đăng ký
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveRequestCallCenterModel.UpdateDateStr">
+            <summary>
+            Ngày cập nhật
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.ReceiveRequestDepartmentModel">
+            <summary>
+            Từ DNO
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveRequestDepartmentModel.RegisterDateStr">
+            <summary>
+            Ngày đăng ký
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.ReceiveRequestDepartmentModel.UpdateDateStr">
+            <summary>
+            Ngày cập nhật
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.ReceiveHandlerModel">
+            <summary>
+            Từ RNO
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.VOCTicketDocHistory">
+            <summary>
+            Lịch sử thông tin chứng từ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.PKTTTKTCode">
+            <summary>
+            Mã PKTTTKT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.DocType">
+            <summary>
+            Loại chứng từ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.DocNum">
+            <summary>
+            Số chứng từ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.PurchaseDateStr">
+            <summary>
+            Ngày mua
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.ExpiredDateStr">
+            <summary>
+            Ngày hết hạn BH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.StatusCode">
+            <summary>
+            Mã tình trạng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.CrashStatus">
+            <summary>
+            Tình trạng hư hỏng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.CustomerCode">
+            <summary>
+            Mã khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.CustomerName">
+            <summary>
+            Tên khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDocHistory.CustomerPhone">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.VOCTicketDiscus">
+            <summary>
+            Dánh sách tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDiscus.FullNameDiscus">
+            <summary>
+            Tên nhân viên tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDiscus.UserSignalStatus">
+            <summary>
+            Trạng thái NV, lấy theo signalr
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDiscus.CrashStatus_Code">
+            <summary>
+            Mã tình trạng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDiscus.CrashStatus_Name">
+            <summary>
+            Tình trạng hư hỏng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDiscus.CustomerCode">
+            <summary>
+            Mã khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDiscus.CustomerName">
+            <summary>
+            Tên khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketDiscus.Status">
+            <summary>
+            Tình trạng
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.VOCTicketTech">
+            <summary>
+            Danh sách kỹ thuật
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketTech.DT_RowId">
+            <summary>
+            row id cho datatable
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketTech.CustomerCode">
+            <summary>
+            Mã khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketTech.CustomerName">
+            <summary>
+            Tên khách hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketTech.CustomerPhone">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketTech.D_DiscusContent">
+            <summary>
+            Nội dung tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketTech.R_DiscusContent">
+            <summary>
+            Nội dung trao đổi với KH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketTech.Status">
+            <summary>
+            Tình trạng ticket
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketStation.D_DiscusContent">
+            <summary>
+            Nội dung tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketStation.R_DiscusContent">
+            <summary>
+            Nội dung trao đổi với KH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketStation.Status">
+            <summary>
+            Tình trạng ticket
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketCS.SignalStatus">
+            <summary>
+            Trạng thái online offline signalr
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketCS.ErrorCode">
+            <summary>
+            Mã tình trạng hư hỏng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketCS.ErrorName">
+            <summary>
+            Tên tình trạng hư hỏng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketCS.CodePKTTTKT">
+            <summary>
+            Mã PKT TTKT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketCS.CloseTicket">
+            <summary>
+            Tình trạng ticket
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.VOCTicketCS.Status">
+            <summary>
+            Tình trạng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.PurposeResponseModel.TicketPurposeGuarantee">
+            <summary>
+            Bảo hành
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.PurposeResponseModel.TicketPurposeIndepthAdvice">
+            <summary>
+            Tư vấn chuyên sâu
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.PurposeResponseModel.TicketPurposeEndGuarabtee">
+            <summary>
+            Hết bảo hành
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.PurposeResponseModel.TicketPurposeAdvisory">
+            <summary>
+            tư vấn
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.PurposeResponseModel.TicketPurposeLKPT">
+            <summary>
+            Mua LKPT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.PurposeResponseModel.OtherPurpose">
+            <summary>
+            Mục đích khác
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.PurposeResponseModel.SumPurpose">
+            <summary>
+            Tổng cộng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.SourceResponseModel.TicketSourceAgency">
+            <summary>
+            số lượng đại lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.SourceResponseModel.TicketSourceSupermarket">
+            <summary>
+            Số lượng siêu thị
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.SourceResponseModel.TicketSourceConsumers">
+            <summary>
+            Số lượng người tiêu dùng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.SourceResponseModel.SumSource">
+            <summary>
+            Tổng cộng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.WarrantyHasFeeRequestModel.DocFromDate">
+            <summary>
+            Thời gian chọn có chứng từ và case được chuyển đi
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.WarrantyHasFeeResponseModel.CrashStatus">
+            <summary>
+            Mã tình trạng hư hỏng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.WarrantyHasFeeResponseModel.CurrentTicketStatus">
+            <summary>
+            Hiện trạng xử lý
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.Report.WarrantyHasFeeResponseModel.Note">
+            <summary>
+            Nếu tìm model, serial trong GetMPLoadEWarrantyView:     
+            1. Có dữ liệu, nhưng không đủ điều kiện bảo hành => không đủ điều kiện bảo hành
+            2. Không có dữ liệu: => No data
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.StationTab2Model">
+            <summary>
+            Chuyển-nhận linh kiện hàng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab2Model.ShippingWithDrawNumber">
+            <summary>
+            Số vận đơn rút LK/HH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab2Model.ReceiveDateStr">
+            <summary>
+            Ngày nhận LK/HH
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab2Model.WithdrawStatus">
+            <summary>
+            Trạng thái vận đơn rút LKPT
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab3Model.EnumerationNumber">
+            <summary>
+            Số bảng kê SC-KĐ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab3Model.EnumerationDate">
+            <summary>
+            Ngày lên bảng kê SC-KĐ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab3Model.EnumerationCompleteDate">
+            <summary>
+            Ngày hoàn thành
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.StationTab4Model">
+            <summary>
+            Tab xử lý cuối cùng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab4Model.LastHandlerStatus">
+            <summary>
+            Trạng thái xử lý cuối cùng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab4Model.HandlerExpectedDate">
+            <summary>
+            Ngày dự kiến làm xong
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab4Model.HandlerCompleteDate">
+            <summary>
+            Ngày xử lý xong
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab4Model.Process">
+            <summary>
+            Quá trình xử lý xong
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.StationTab4Model.ReportMonth">
+            <summary>
+            Tháng trạm làm báo cáo
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.TechTicketModel.IsRequestDoc">
+            <summary>
+            Lưu lại thông tin đã yêu cầu tạo mới phiếu lần nào chưa
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.TechTicketModel.IsNewRequestDoc">
+            <summary>
+            Gửi tạo mới phiếu
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Models.VOC.TechTicketModel.Tickets">
+            <summary>
+            Giành cho quyền manager khi chọn nhiều trên lưới
+            </summary>
+        </member>
+        <member name="T:VAS.Dealer.Models.VOC.VOCTicketProductHistory">
+            <summary>
+            Lịch sử sản phẩm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.Agent_Productivity">
+            <summary>
+            Báo cáo năng suất điện thoại viên
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.Agent_MissCall">
+            <summary>
+            Báo cáo cuộc gọi nhỡ
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.RP_2021_GetRecording">
+            <summary>
+            Tìm kiếm file ghi âm
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.RP_2021_AGENT_CICLogin">
+            <summary>
+            Báo cáo thời gian đăng nhập CIC
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.ReportCallDetailsIB">
+            <summary>
+            Báo cáo Chi tiết inbound
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.RP_CIC_2021_OBDetails">
+            <summary>
+            Báo cáo chi tiết gọi ra
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.IB_Productivity">
+            <summary>
+            Báo cáo năng suất inbound
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.RP_2021_IBTotal">
+            <summary>
+            Báo cáo tổng hợp inbound
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.RP_2021_IBCallTrend">
+            <summary>
+            Báo cáo xu hướng
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.RP_2021_Agent_Active">
+            <summary>
+            Báo cáo hoạt động agent
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.CICContext.RP_2021_Agent_StatusDetails">
+            <summary>
+            Báo cáo chi tiết trạng thái agent
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Services.MP_Context.VAS_GetRegisterByUser">
+            <summary>
+            Lịch sử đăng ký mới thuê bao theo tài khoản
+            </summary>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.Login">
+            <summary>
+            Lấy session đăng nhập
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.LayDanhSachGoiDichVu(System.String)">
+            <summary>
+            Danh sách  dịch vụ theo mã
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.layTatCaGoiDichVu">
+            <summary>
+            Lay tất cả dịch vụ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.TaoDaiLyCon(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel)">
+            <summary>
+            Tạo đại lý con
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.TimKiemDaiLy(System.String)">
+            <summary>
+            Tạo đại lý con
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.DaiLyMoiGoi(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel)">
+            <summary>
+            Đăng ký mới thuê bao
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.SuaThongTinDaiLy(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel)">
+            <summary>
+            Sửa thông tin đại lý con
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.XoaDaiLy(VAS.Dealer.Models.VAS.VINAService.XoaDaiLyRequestModel)">
+            <summary>
+            Xóa đại lý con
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.APIServices.DaiLyMoiGiaHan(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel)">
+            <summary>
+            Gia hạn thuê bao
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetTree">
+            <summary>
+            Lấy thông tin hiển thị cây thư mục
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetCategoryByCatType(System.Int32)">
+            <summary>
+            Lấy danh sách category theo catTypeId
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.Update(VAS.Dealer.Models.Entities.MP_Category,System.String)">
+            <summary>
+            Cập nhật danh mục
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetCategoryByCode(System.String)">
+            <summary>
+            Lấy category theo code
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.Add(VAS.Dealer.Models.Entities.MP_Category,System.String)">
+            <summary>
+            Tạo mới danh mục
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.AddCatType(VAS.Dealer.Models.Entities.MP_CatType)">
+            <summary>
+            Thêm mới loại danh mục
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.CheckExistCategoryCode(System.String)">
+            <summary>
+            Kiểm tra tồn tại mã danh mục
+            </summary>
+            <param name="code"></param>
+            <returns>True: tồn tại, False: không tồn tại</returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.DeleteCategory(System.Int32)">
+            <summary>
+            Xóa danh mục
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetCategoryByCatTypeModel_ValueName(MP.Common.VOC_CatType)">
+            <summary>
+            Lấy ra model cho select2 với Select2Model với value, Name
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetSolutionAfterDiscus(System.Boolean,System.String)">
+            <summary>
+            Hướng xử lý sau tư vấn
+            Không cho chọn những trạng thái không thuộc isManager
+            Cho chọn trọng thái hiện tại
+            </summary>
+            <param name="isManager"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetSolutionAfterTech(System.Boolean,System.String)">
+            <summary>
+            Hướng xử lý sau tư vấn
+            Không cho chọn những trạng thái không thuộc isManager
+            Cho chọn trọng thái hiện tại
+            </summary>
+            <param name="isManager"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetCategoryByCatTypeCodeWithNameAndDescription(MP.Common.VOC_CatType)">
+            <summary>
+            Lấy ra model cho select2 name + ExpandProperties
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetCategoryByCatType(MP.Common.VOC_CatType)">
+            <summary>
+            Lấy SelectList 
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetCategoryByCatType(MP.Common.VOC_CatType,System.String)">
+            <summary>
+            Lấy SelectList có selected
+            </summary>
+            <param name="catTypeId"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetCategoryByCatType_Multi(MP.Common.VOC_CatType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Lấy ra model cho select2 multi
+            </summary>
+            <param name="catTypeId"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetEmailConfigInUse">
+            <summary>
+            Lấy cấu hình email đang sử dụng
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.SaveMailConfig(VAS.Dealer.Models.CRM.MailConfigModel,System.String,System.String@)">
+            <summary>
+            Lưu thông tin cấu hình mail
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.SaveMailContent(VAS.Dealer.Models.CRM.MailConfigModel,System.String,System.String@)">
+            <summary>
+            Lưu lại nội dung email
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.GetPurposeCategory(System.String)">
+            <summary>
+            Lấy danh mục cho mục đích
+            </summary>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CategoryServices.CheckExistEmailConfig(System.Int32)">
+            <summary>
+            Kiểm tra tồn tại email config
+            </summary>
+            <param name="id"></param>
+            <returns>True: tồn tài, False: không tồn tại</returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CDRServices.PrefixRegis1Day(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CDRServices.PrefixRegis30(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CDRServices.PrefixRenew1Day(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.CDRServices.CDRRegis(VAS.Dealer.Models.VAS.PagingCDRRequestModel)">
+            <summary>
+            Đối soát mời gói
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.EmailServices.SendMail(System.Boolean,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String@,System.String,System.String)">
+            <summary>
+            Gửi email
+            </summary>
+            <param name="SSL"></param>
+            <param name="userEmail"></param>
+            <param name="email"></param>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="emailTo"></param>
+            <param name="subject"></param>
+            <param name="content"></param>
+            <param name="sendMailMessage"></param>
+            <param name="nameOfEmail"></param>
+            <param name="nameOfToEmail"></param>
+            <returns></returns>
+        </member>
+        <member name="T:VAS.Dealer.Services.FTPServices">
+            <summary>
+            - Mời gói
+            TDL_MP_service_regis_hist_20210514125342.txt     =>>>>>>>>>>>>>>>>> Trả về với mỗi  30 phút
+            - Gia hạn   
+            TDL_MP_renew_20210514120030.txt                 =>>>>>>>>>>>>>>>>>>> Trả về vào cuối ngày
+            - Tổng của mời gói
+            TDL_MP_regis_20210514120035.txt                 =>>>>>>>>>>>>>>>>>> Trả về cuối ngày
+            ----------------------------------------------------------------------------------
+            Chỉ có thể đối soát được Mời gói 30 phút 1 ngày -> Đến cuối ngày sẽ đối soát lại với file tổng
+            Gia hạn chỉ có thể đối soát vào cuối ngày
+            </summary>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.InitSession">
+            <summary>
+            Khởi tạo session ftp
+            </summary>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.GetAllFileName">
+            <summary>
+            Lấy danh sách file name trong folder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.GetListFileRegis30NameByDay(System.DateTime)">
+            <summary>
+            Lấy danh sách file theo ngày
+            Định dạng file theo config PrefixRegis30
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.InitDataRegis1Day(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Khởi tạo dữ liệu cho báo cáo
+            Định dạng file theo config PrefixRegis1Day
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.InitDataRegis30(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Khởi tạo dữ liệu cho báo cáo
+            Định dạng file theo config PrefixRegis30
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.InitDataRenew1Day(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Khởi tạo dữ liệu cho báo cáo
+            Định dạng file theo config PrefixRenew1Day
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.GetListFileRenew1DayNameByDay(System.DateTime)">
+            <summary>
+            Lấy danh sách file theo ngày
+            Định dạng file theo config PrefixRenew1Day
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.GetFiles(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Tải file về
+            </summary>
+            <param name="fileNames"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.FileDownloaded(System.DateTime,System.DateTime)">
+            <summary>
+            Kiểm tra trong khoảng thời gian đã tải file chưa
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.SaveFtpHistory(VAS.Dealer.Models.Entities.VAS_FtpHistory)">
+            <summary>
+            Lưu lịch sử tải file
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.FTPServices.GetFileDate(System.String,System.String@)">
+            <summary>
+            Tách tên file ra lấy thời gian
+            </summary>
+            <param name="fileName"></param>
+            <param name="fileType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.LayDanhSachGoiDichVu(System.String)">
+            <summary>
+            Danh sách  dịch vụ
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.layTatCaGoiDichVu">
+            <summary>
+            Lay tất cả dịch vụ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.DaiLyMoiGiaHan(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel)">
+            <summary>
+            Gia hạn thuê bao
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.TaoDaiLyCon(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel)">
+            <summary>
+            Tạo đại lý con
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.TimKiemDaiLy(System.String)">
+            <summary>
+            Tạo đại lý con
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.DaiLyMoiGoi(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel)">
+            <summary>
+            Đăng ký mới thuê bao
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.SuaThongTinDaiLy(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel)">
+            <summary>
+            Sửa thông tin đại lý con
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IAPIServices.XoaDaiLy(VAS.Dealer.Models.VAS.VINAService.XoaDaiLyRequestModel)">
+            <summary>
+            Xóa đại lý con
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetTree">
+            <summary>
+            Lấy thông tin hiển thị cây thư mục
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCatType(System.Int32)">
+            <summary>
+            Lấy danh sách category theo catTypeId
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCode(System.String)">
+            <summary>
+            Lấy category theo code
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.Update(VAS.Dealer.Models.Entities.MP_Category,System.String)">
+            <summary>
+            Cập nhật danh mục
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.Add(VAS.Dealer.Models.Entities.MP_Category,System.String)">
+            <summary>
+            Thêm mới danh mục
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.AddCatType(VAS.Dealer.Models.Entities.MP_CatType)">
+            <summary>
+            Thêm mới loại danh mục
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.DeleteCategory(System.Int32)">
+            <summary>
+            Xóa danh mục
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.CheckExistCategoryCode(System.String)">
+            <summary>
+            Kiểm tra tồn tại mã danh mục
+            </summary>
+            <param name="code"></param>
+            <returns>True: tồn tại, False: không tồn tại</returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCatType(MP.Common.VOC_CatType,System.String)">
+            <summary>
+            Lấy ra model cho select2
+            </summary>
+            <param name="catTypeId"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetPurposeCategory(System.String)">
+            <summary>
+            Lấy danh mục cho mục đích
+            </summary>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCatType_Multi(MP.Common.VOC_CatType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Lấy ra model cho select2 multi
+            </summary>
+            <param name="catTypeId"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCatType(MP.Common.VOC_CatType)">
+            <summary>
+            Lấy SelectList 
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCatType_CodeWithName(MP.Common.VOC_CatType,System.String)">
+            <summary>
+            Lấy ra model cho select2 với SelectList nối Code - Name
+            </summary>
+            <param name="catTypeId"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCatTypeModel_ValueName(MP.Common.VOC_CatType)">
+            <summary>
+            Lấy ra model cho select2 với Select2Model với value, Name
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetSolutionAfterDiscus(System.Boolean,System.String)">
+            <summary>
+            Hướng xử lý sau tư vấn
+            Không cho chọn những trạng thái không thuộc isManager
+            Cho chọn trọng thái hiện tại
+            </summary>
+            <param name="isManager"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetSolutionAfterTech(System.Boolean,System.String)">
+            <summary>
+            Hướng xử lý sau tư vấn
+            Không cho chọn những trạng thái không thuộc isManager
+            Cho chọn trọng thái hiện tại
+            </summary>
+            <param name="isManager"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetCategoryByCatTypeCodeWithNameAndDescription(MP.Common.VOC_CatType)">
+            <summary>
+            Lấy ra model cho select2 name + ExpandProperties
+            </summary>
+            <param name="catTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetStoreArea(System.String)">
+            <summary>
+            Khu vực
+            </summary>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetStoreAreaWithModel(System.String,System.Int32)">
+            <summary>
+            Khu vực
+            </summary>
+            <param name="userName"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetProvinceByArea(System.String,System.String)">
+            <summary>
+            Lấy thông tin tỉnh thành theo khu vực
+            </summary>
+            <param name="area"></param>
+            <param name="selectedItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetSelectListProvinceByArea(System.String,System.String)">
+            <summary>
+            Lấy thông tin tỉnh thành theo khu vực
+            </summary>
+            <param name="area"></param>
+            <param name="selectedItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetDistrictByProvince(System.String,System.String)">
+            <summary>
+            Lấy thông tin huyện theo tỉnh
+            </summary>
+            <param name="province"></param>
+            <param name="selectedItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetSelectListDistrictByProvince(System.String,System.String)">
+            <summary>
+            Lấy thông tin huyện theo tỉnh
+            </summary>
+            <param name="province"></param>
+            <param name="selectedItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetModelByProductType(System.String,System.String)">
+            <summary>
+            Lấy thông tin model theo loại nghành hàng
+            </summary>
+            <param name="productType"></param>
+            <param name="selectedModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetSelectListModelByProductType(System.String,System.String)">
+            <summary>
+            Lấy thông tin model theo loại nghành hàng
+            </summary>
+            <param name="productType"></param>
+            <param name="selectedModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetProductDetailByModel(System.String,System.String)">
+            <summary>
+            Lấy data cho Màu, Dung tích/Công suất khi chọn loại nghành hàng, gán selected color
+            </summary>
+            <param name="productModel"></param>
+            <param name="selectedColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetSelectListColorByModel(System.String,System.String)">
+            <summary>
+            Lấy data cho Màu khi chọn loại nghành hàng, gán selected color
+            </summary>
+            <param name="productModel"></param>
+            <param name="selectedModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetEmailConfigInUse">
+            <summary>
+            Lấy cấu hình email đang sử dụng
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.SaveMailConfig(VAS.Dealer.Models.CRM.MailConfigModel,System.String,System.String@)">
+            <summary>
+            Lưu thông tin cấu hình mail
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.SaveMailContent(VAS.Dealer.Models.CRM.MailConfigModel,System.String,System.String@)">
+            <summary>
+            Lưu lại nội dung email
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.CheckExistEmailConfig(System.Int32)">
+            <summary>
+            Kiểm tra tồn tại email config
+            </summary>
+            <param name="id"></param>
+            <returns>True: tồn tài, False: không tồn tại</returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICategoryServices.GetConfigByCode(System.String)">
+            <summary>
+            Lấy cấu hình crm theo mã code
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICDRServices.PrefixRegis1Day(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICDRServices.PrefixRegis30(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICDRServices.PrefixRenew1Day(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.ICDRServices.CDRRegis(VAS.Dealer.Models.VAS.PagingCDRRequestModel)">
+            <summary>
+            Đối soát mời gói
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IEmailServices.SendMail(System.Boolean,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String@,System.String,System.String)">
+            <summary>
+            Gửi email
+            </summary>
+            <param name="SSL"></param>
+            <param name="userEmail"></param>
+            <param name="email"></param>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="emailTo"></param>
+            <param name="subject"></param>
+            <param name="content"></param>
+            <param name="sendMailMessage"></param>
+            <param name="nameOfEmail"></param>
+            <param name="nameOfToEmail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IFTPServices.GetAllFileName">
+            <summary>
+            Lấy danh sách file name trong folder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IFTPServices.GetFiles(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Tải file về
+            </summary>
+            <param name="fileNames"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IFTPServices.InitDataRegis1Day(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Khởi tạo dữ liệu cho báo cáo
+            Định dạng file theo config PrefixRegis1Day
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IFTPServices.InitDataRegis30(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Khởi tạo dữ liệu cho báo cáo
+            Định dạng file theo config PrefixRegis1Day
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IFTPServices.InitDataRenew1Day(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Khởi tạo dữ liệu cho báo cáo
+            Định dạng file theo config PrefixRenew1Day
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IMemoryServices.GetUserOnline">
+            <summary>
+            Lấy danh sách tài khoản online
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IMemoryServices.CheckOnline(System.String)">
+            <summary>
+            Kiểm tra tài khoản đang online
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.GetListAccount(System.String)">
+            <summary>
+            Danh sách quản lý tài khoản
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.GetAllAccount(System.String)">
+            <summary>
+            Lấy danh sách tài khoản cho select2
+            </summary>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.GetAllAccountCIC(System.String)">
+            <summary>
+            Lấy danh sách tài khoản cho select2
+            Do anh Tiến không đặt tiếp đầu ngữ tài khoản CIC giống với CRM 
+            nên cần đổi để có thể tìm kiếm theo agent được
+            </summary>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.CheckExistUserByUserName(System.String)">
+            <summary>
+            Kiểm tra tài khoản có trên hệ thống, được active và không bị khóa
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.GetEmailByUserName(System.String,System.String@)">
+            <summary>
+            Kiểm tra tài khoản có email hoặc sai định dạng
+            </summary>
+            <param name="userName"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.GetCodeRecover(System.String,VAS.Dealer.Models.CRM.MailConfigModel,System.String,VAS.Dealer.Models.CRM.RecoverPasswordModel@)">
+            <summary>
+            Lấy mã code recover password tài khoản
+            </summary>
+            <param name="userName"></param>
+            <param name="conf"></param>
+            <param name="userEmail"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.RecoveryPassword(System.String,System.String,System.String,System.String@)">
+            <summary>
+            Lấy lại mật khẩu
+            </summary>
+            <param name="userName"></param>
+            <param name="code"></param>
+            <param name="newPassword"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IUserServices.AccountLog(System.String,System.String)">
+            <summary>
+            Lưu thời gian đăng nhập, đăng xuất
+            </summary>
+            <param name="userName"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.GetRegisterByUser(System.String,VAS.Dealer.Models.VAS.PagingRequestModel)">
+            <summary>
+            Lịch sử đăng ký mới thuê bao theo tài khoản
+            </summary>
+            <param name="username"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.ValidateCreateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String@)">
+            <summary>
+            Validate
+            </summary>
+            <param name="model"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.ValidateUpdateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String@)">
+            <summary>
+            Validate
+            </summary>
+            <param name="model"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.ValidateDeleteVendor(System.String,System.String@)">
+            <summary>
+            Validate
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.DeleteVendor(VAS.Dealer.Models.VAS.VINAService.XoaDaiLyRequestModel,System.String)">
+            <summary>
+            Delete đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.CreateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String)">
+            <summary>
+            Lưu thông tin đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.UpdateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String)">
+            <summary>
+            Lưu thông tin đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.ListVendor">
+            <summary>
+            Danh sách đại lý đã tạo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.GetRegister(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.GetVendorByPermis(System.String,System.Boolean)">
+            <summary>
+            Lấy đại lý theo quyền
+            </summary>
+            <param name="userName"></param>
+            <param name="allowAll"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.GetAllVendor">
+            <summary>
+            Lấy đại lý
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.SaveRegis(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel,System.String,System.String)">
+            <summary>
+            Lưu thông tin đăng ký
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="tradeKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.SaveExtend(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel,System.String,System.String)">
+            <summary>
+            Gia hạn thuê bao
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="tradeKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.Interfaces.IVASServices.GetVendorByCode(System.String)">
+            <summary>
+            Lấy thông tin đại lý theo mã
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.MemoryServices.GetUserOnline">
+            <summary>
+            Lấy danh sách tài khoản online
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.MemoryServices.CheckOnline(System.String)">
+            <summary>
+            Kiểm tra tài khoản đang online
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.PermissionServices.GetListPermission(System.String)">
+            <summary>
+            Lấy danh sách permission theo tên
+            </summary>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.RoleServices.GetListRole(System.String)">
+            <summary>
+            Lấy danh sách quyền theo tên
+            </summary>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.RoleServices.AddRole(VAS.Dealer.Models.CRM.RoleModel,System.String)">
+            <summary>
+            Thêm mới quyền
+            </summary>
+            <param name="obj"></param>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.RoleServices.UpdateRole(VAS.Dealer.Models.CRM.RoleModel,System.String)">
+            <summary>
+            Cập nhật quyền
+            </summary>
+            <param name="obj"></param>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.RoleServices.DeleteRole(System.Int32,System.String)">
+            <summary>
+            Xóa quyền
+            </summary>
+            <param name="Id"></param>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.RemoveAccountOnline(System.String)">
+            <summary>
+            Xóa user đăng nhập hệ thống
+            </summary>
+            <param name="userName"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.AddAccountOnline(VAS.Dealer.Models.Entities.MP_Account)">
+            <summary>
+            Thêm user đăng nhập hệ thống
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.GetListAccount(System.String)">
+            <summary>
+            Lấy danh sách tài khản theo tên đăng nhập
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.AddAccount(VAS.Dealer.Models.CC.AccountModel,System.String)">
+            <summary>
+            Thêm mới tài khoản
+            </summary>
+            <param name="obj"></param>
+            <param name="userName">Tài khoản tạo user</param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.UpdateAccount(VAS.Dealer.Models.CC.AccountModel)">
+            <summary>
+            Cập nhật tài khoản
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.GetAccountById(System.Int32)">
+            <summary>
+            Lấy thông tin theo Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.GetCodeRecover(System.String,VAS.Dealer.Models.CRM.MailConfigModel,System.String,VAS.Dealer.Models.CRM.RecoverPasswordModel@)">
+            <summary>
+            Lấy mã code recover password tài khoản
+            </summary>
+            <param name="userName"></param>
+            <param name="conf"></param>
+            <param name="userEmail"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.RecoveryPassword(System.String,System.String,System.String,System.String@)">
+            <summary>
+            Lấy lại mật khẩu
+            </summary>
+            <param name="userName"></param>
+            <param name="code"></param>
+            <param name="newPassword"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.UpdateInfoAccount(VAS.Dealer.Models.CC.AccountModel)">
+            <summary>
+            Cập nhật thông tin tài khoản
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.DeleteAccount(System.Int32,System.String)">
+            <summary>
+            xóa tài khoản
+            </summary>
+            <param name="Id"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.ResetPassword(System.Int32,System.String@)">
+            <summary>
+            Reset mật khẩu
+            </summary>
+            <param name="Id"></param>
+            <param name="pw"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.ChangePassword(System.Int32,System.String,System.String)">
+            <summary>
+            Đổi mật khẩu
+            </summary>
+            <param name="Id"></param>
+            <param name="passwordOld"></param>
+            <param name="passwordNew"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.UnLockAccount(System.Int32,System.Boolean)">
+            <summary>
+            Mở/khóa tài khoản
+            </summary>
+            <param name="Id"></param>
+            <param name="IsLock"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.GetAllAccount(System.String)">
+            <summary>
+            Lấy danh sách tài khoản cho select2
+            </summary>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.GetAllAccountCIC(System.String)">
+            <summary>
+            Lấy danh sách tài khoản cho select2
+            Do anh Tiến không đặt tiếp đầu ngữ tài khoản CIC giống với CRM 
+            nên cần đổi để có thể tìm kiếm theo agent được
+            </summary>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.CheckExistUserByUserName(System.String)">
+            <summary>
+            Kiểm tra tài khoản có trên hệ thống, được active và không bị khóa
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.GetEmailByUserName(System.String,System.String@)">
+            <summary>
+            Kiểm tra tài khoản có email hoặc sai định dạng
+            </summary>
+            <param name="userName"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.UserServices.AccountLog(System.String,System.String)">
+            <summary>
+            Lưu thời gian đăng nhập, đăng xuất
+            </summary>
+            <param name="userName"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.GetRegisterByUser(System.String,VAS.Dealer.Models.VAS.PagingRequestModel)">
+            <summary>
+            Lịch sử đăng ký mới thuê bao theo tài khoản
+            </summary>
+            <param name="username"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.GetRegister(VAS.Dealer.Models.VAS.PagingAllHisRegisRequestModel)">
+            <summary>
+            Giành cho quản trị tìm kiếm
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.ValidateCreateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String@)">
+            <summary>
+            Validate
+            </summary>
+            <param name="model"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.ValidateUpdateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String@)">
+            <summary>
+            Validate
+            </summary>
+            <param name="model"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.ValidateDeleteVendor(System.String,System.String@)">
+            <summary>
+            Validate
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.GenBranchCode">
+            <summary>
+            Tạo mã mới 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.CreateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String)">
+            <summary>
+            Lưu thông tin đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.UpdateVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String)">
+            <summary>
+            Lưu thông tin đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.DeleteVendor(VAS.Dealer.Models.VAS.VINAService.XoaDaiLyRequestModel,System.String)">
+            <summary>
+            Delete đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.DeleteVendor(System.String,System.String,System.String)">
+            <summary>
+            Delete db đại lý
+            </summary>
+            <param name="code"></param>
+            <param name="userName"></param>
+            <param name="reasion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.SaveVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String)">
+            <summary>
+            Lưu DB đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.UpdateDBVendor(VAS.Dealer.Models.VAS.VINAService.TaoDaiLyConRequestModel,System.String)">
+            <summary>
+            Lưu cập nhật DB đại lý
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.ListVendor">
+            <summary>
+            Danh sách đại lý đã tạo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.GetVendorByPermis(System.String,System.Boolean)">
+            <summary>
+            Lấy đại lý theo quyền
+            </summary>
+            <param name="userName"></param>
+            <param name="allowAll"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.GetAllVendor">
+            <summary>
+            Lấy đại lý
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.SaveRegis(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGoiRequestModel,System.String,System.String)">
+            <summary>
+            Lưu thông tin đăng ký
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="tradeKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.SaveExtend(VAS.Dealer.Models.VAS.VINAService.DaiLyMoiGiaHanRequestModel,System.String,System.String)">
+            <summary>
+            Gia hạn thuê bao
+            </summary>
+            <param name="model"></param>
+            <param name="userName"></param>
+            <param name="tradeKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Services.VASServices.GetVendorByCode(System.String)">
+            <summary>
+            Lấy thông tin đại lý theo mã
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Provider.CCEvents.OnConnectedAsync">
+            <summary>
+            Provides the handler for SignalR OnConnected event
+            supports async threading
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Provider.CCEvents.OnDisconnectedAsync(System.Exception)">
+            <summary>
+            Provides the handler for SignalR OnDisconnected event
+            supports async threading
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VAS.Dealer.Provider.CCEvents.Send(System.String,System.String)">
+            <summary>
+            Provides the facility to send individual user notification message
+            </summary>
+            <param name="profileId">
+            Set to the ProfileId of user who will receive the notification
+            </param>
+            <param name="message">
+            set to the notification message
+            </param>
+        </member>
+        <member name="M:VAS.Dealer.Provider.CCEvents.SendUserMessage(System.String,System.String)">
+            <summary>
+            Provides the facility to send group notification message
+            set to the user groupd name who will receive the message
+            </summary>
+            <param name="groupName"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:VAS.Dealer.Provider.CCEvents.GetUser(System.String)">
+            <summary>
+            Provides the ability to get User from the dictionary for passed in profileId
+            </summary>
+            <param name="profileId">
+            set to the profileId of user that need to be fetched from the dictionary
+            </param>
+            <returns>
+            return User object if found otherwise returns null
+            </returns>
+        </member>
+        <member name="M:VAS.Dealer.Provider.CCEvents.GetConnectedUser">
+            <summary>
+            Provide theability to get currently connected user
+            </summary>
+            <returns>
+            profileId of user based on current connectionId
+            </returns>
+        </member>
+        <member name="P:VAS.Dealer.Provider.User.ProfileId">
+            <summary>
+            Property to get/set ProfileId
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Provider.User.ConnectionIds">
+            <summary>
+            Propoerty to get/set multiple ConnectionId
+            </summary>
+        </member>
+        <member name="P:VAS.Dealer.Provider.MM_CheckMPLoadElSerialModel.IsFound_MPLoadEWarrantyView">
+            <summary>
+            Trường hợp tìm thấy ở MPLoadEWarrantyView
+            </summary>
+        </member>
+        <member name="P:API_OutBound.Infrastructure.Jwt.TokenManagement.ListUsers">
+            <summary>
+            Danh sách tài khoản
+            </summary>
+        </member>
+    </members>
+</doc>

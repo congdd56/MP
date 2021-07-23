@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MP.Common</name>
+    </assembly>
+    <members>
+        <member name="F:MP.Common.VOC_UploadType.Invoice">
+            <summary>
+            File hóa đơn
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_UploadType.Temp">
+            <summary>
+            File mẫu sản phẩm
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_UploadType.TTHH">
+            <summary>
+            File tình trạng hàng hóa
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_Tab.CallCenter">
+            <summary>
+            Tổng đài
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_Tab.Discus">
+            <summary>
+            Tư vấn
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_Tab.Tech">
+            <summary>
+            Kỹ thuật
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_Tab.TakeCare">
+            <summary>
+            Chăm sóc
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_RequestReceiveType.Request">
+            <summary>
+            Lưu thông tin tiếp nhận
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_RequestReceiveType.Handler">
+            <summary>
+            Lưu thông tin xử lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_Button.Receive">
+            <summary>
+            Button lưu thông tin yêu cầu, RNO
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_Button.Handler">
+            <summary>
+            Button lưu thông tin xử lý, DNO
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_Button.Close">
+            <summary>
+            Button cho phòng ban tổng đài 
+            </summary>
+        </member>
+        <member name="T:MP.Common.VOC_CatType">
+            <summary>
+            Lấy Id trong database
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.DeniedCode">
+            <summary>
+            Mã từ chối
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.Document">
+            <summary>
+            Loại giấy tờ
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.Provider">
+            <summary>
+            Nhà mạng
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.TinhTrangHangHoa">
+            <summary>
+            Tình trạng hàng hóa
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.LoaiSanPham">
+            <summary>
+            Loại sản phẩm (Loại nghành hàng)
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.HienTrangXuLy_TiepNhan">
+            <summary>
+            Hiện trạng đang xử lý(tiếp nhận)
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.TinhTrangHuHong_ThuocMP">
+            <summary>
+            Tình trạng hư hỏng(thuộc MP)
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.NguonNhan">
+            <summary>
+            Nguồn nhận
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.MucDich">
+            <summary>
+            Mục đích
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.MucDichMP">
+            <summary>
+            Mục đích của MP vận hành
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.KenhTiepNhan">
+            <summary>
+            Kênh tiếp nhận
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.HuongXuLySauTuVan_TuVan">
+            <summary>
+            Hướng xử lý sau tư vấn/tab Tư vấn
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.HienTrangChamSocSauSuaChua">
+            <summary>
+            Hiện trạng/ chăm sóc sau sửa chữa
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.HuongXuLySauTuVan_KyThuat">
+            <summary>
+            Hướng xử lý sau tư vấn/tab Kỹ thuật
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.LoaiCuaHangDaiLy">
+            <summary>
+            Loại cửa hàng đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.CacBuocChamSoc">
+            <summary>
+            Các bước chăm sóc
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.LoaiChungTu">
+            <summary>
+            Loại chứng từ
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.LoaiChungTuKhac">
+            <summary>
+            Loại chứng từ khác, trong danh mục là Chứng từ không hợp lệ
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.HuongXuLy_Tram">
+            <summary>
+            Hướng xử lý ở trạm
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.VOCTrangThaiSuVu">
+            <summary>
+            VOC trạng thái sự vụ
+            </summary>
+        </member>
+        <member name="F:MP.Common.VOC_CatType.VOCTrangThaiXuLyCuoiCung">
+            <summary>
+            Trạng thái xử lý cuối cùng, trạm xử lý, tab xử lý cuối cùng
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.view_account">
+            <summary>
+            Cho phép truy cập màn hình quản lý tài khoản
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.view_role">
+            <summary>
+            Cho phép truy cập màn hình quản lý quyền
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.view_category">
+            <summary>
+            Cho phép truy cập màn hình danh mục
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.view_mail_config">
+            <summary>
+            Cho phép truy cập màn hình cấu hình mail
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.view_error_code">
+            <summary>
+            Cho phép truy cập màn hình quản lý mã lỗi
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.view_login_account">
+            <summary>
+            Cho phép xem tài khoản đăng nhập hệ thống
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.edit_manager_customer">
+            <summary>
+            Cho phép chỉnh sửa thông tin khách hàng
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.view_manager_customer">
+            <summary>
+            Cho phép truy cập màn hình quản lý khách hàng
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.manager_group_agent">
+            <summary>
+            Cho phép quản lý nhóm điện thoại viên
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vas_register">
+            <summary>
+            Cho phép tạo mới thuê bao
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vas_register_all">
+            <summary>
+            Cho phép tạo mới thuê bao với tất cả đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vas_view_register">
+            <summary>
+            Cho phép truy cập màn đăng ký mới thuê bao
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vas_extend">
+            <summary>
+            Cho phép gia hạn thuê bao
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vas_extend_all">
+            <summary>
+            Cho phép gia hạn thuê bao với tất cả đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.his_view_his">
+            <summary>
+            Cho phép truy cập màn hình lịch sử đăng ký
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.his_view_all">
+            <summary>
+            Cho phép lịch sử đăng ký tất cả đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.service_view">
+            <summary>
+            Cho phép truy cập màn hình danh sách dịch vụ
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vendor_view">
+            <summary>
+            Cho phép truy cập màn hình đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vendor_delete">
+            <summary>
+            Cho phép xóa đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vendor_edit">
+            <summary>
+            Cho phép cập nhật đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPConst.vendor_add">
+            <summary>
+            Cho phép tạo mới đại lý
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.NoCompany">
+            <summary>
+            Không tìm thấy công ty
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.UserNameExits">
+            <summary>
+            Tên đăng nhập đã tồn tại vui lòng nhập lại
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.SystemError">
+            <summary>
+            Lỗi hệ thống
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RegisSystemUnavailabe">
+            <summary>
+            Hệ thống đăng ký không sẵn sàng hoặc tạm dừng
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.NotEnoughInformation">
+            <summary>
+            Không nhập đầy đủ thông tin
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.WrongCompanyCode">
+            <summary>
+            Sai mã công ty
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.FormatDate">
+            <summary>
+            Sai định dạng thời gian
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.ErrorRecruitmentCode">
+            <summary>
+            Code ứng tuyển sai hoặc chưa được kích hoạt
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.ErrorRecruitmentInUsed">
+            <summary>
+            Code ứng tuyển đã được sử dụng
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.NotRecruitmentData">
+            <summary>
+            Không tìm thấy dữ liệu cho việc ứng tuyển
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.EmailAccountExits">
+            <summary>
+            Email đã tồn tại.
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.UserNameNotFound">
+            <summary>
+            Tài khoản không tồn tại
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.EmailAccountNotFound">
+            <summary>
+            Không tìm thấy email trong tài khoản
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.AccountHadActive">
+            <summary>
+            Tài khoản đã kích hoạt. Vui lòng đăng nhập
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.ErrorCodeActiveAccount">
+            <summary>
+            Sai mã kích hoạt
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.PasswordRecoverCodeExpire">
+            <summary>
+            Mã lấy lại mật khẩu đã hết hạn
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.PasswordWrongFormat">
+            <summary>
+            Mật khẩu không đúng định dạng
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.CampaignNotFound">
+            <summary>
+            Không tìm thấy chiến dịch
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.OutOfDataCall">
+            <summary>
+            Hết dữ liệu gọi ra
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.OldPassWrong">
+            <summary>
+            Mật khẩu cũ không đúng
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RecDuplicateInfo">
+            <summary>
+            Trùng thông tin đăng ký ứng viên
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequireCallInfo">
+            <summary>
+            Yêu cầu nhập thông tin cuộc gọi
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.DataServerNotFound">
+            <summary>
+            Không tìm thấy thông tin kết nối dữ liệu
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.ErrorAppoimentDate">
+            <summary>
+            Sai ngày giờ hẹn gọi lại
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredPhone">
+            <summary>
+            Số điện thoại không được trống
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredStatus">
+            <summary>
+            Yêu cầu nhập trạng thái
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.Ok">
+            <summary>
+            Thành công
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.ErrorSystem">
+            <summary>
+            Lỗi hệ thống
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.NotFoundTicket">
+            <summary>
+            Không tìm thấy mã sự vụ
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredDataId_5">
+            <summary>
+            Thiếu thông tin 'DataId'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredCaseID_5">
+            <summary>
+            Thiếu thông tin 'CaseID'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredFileName_5">
+            <summary>
+            Thiếu thông tin 'FileName'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredNumSeqPKTTTKT_5">
+            <summary>
+            Thiếu thông tin 'NumSeqPKTTTKT'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredPKTStatus_5">
+            <summary>
+            Thiếu thông tin 'PKTStatus'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.FormatDateClose_5">
+            <summary>
+            Sai định dạng DateClose, yêu cầu 'dd/MM/yyyy'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.FormatDateCreate_5">
+            <summary>
+            Sai định dạng DateCreate, yêu cầu 'dd/MM/yyyy'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredTTBHPhieuKTTTKT_6">
+            <summary>
+            Thiếu thông tin 'TTBHPhieuKTTTKT'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredTTBHPhieuSC_6">
+            <summary>
+            Thiếu thông tin 'TTBHPhieuSC'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.RequiredNumSeqPDNCLKPT_7">
+            <summary>
+            Thiếu thông tin 'NumSeqPDNCLKPT'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.FormatTransDateReceivedPTLK_7">
+            <summary>
+            Sai định dạng TransDateReceivedPTLK, yêu cầu 'dd/MM/yyyy'
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPAPIStatusErr.Code.FormatTransDateRecivedTBH_7">
+            <summary>
+            Sai định dạng TransDateRecivedTBH, yêu cầu 'dd/MM/yyyy'
+            </summary>
+        </member>
+        <member name="F:MP.Common.AccountLoginTime.Login">
+            <summary>
+            Đăng nhập
+            </summary>
+        </member>
+        <member name="F:MP.Common.AccountLoginTime.Logout">
+            <summary>
+            Đăng xuất
+            </summary>
+        </member>
+        <member name="M:MP.Common.MPHelper.GetExtenFileAttachByPath(System.String)">
+            <summary>
+            Lấy extension file theo đường dẫn
+            </summary>
+            <param name="attachFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MP.Common.MPHelper.IsValidEmail(System.String)">
+            <summary>
+            Kiểm tra định dạng email
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MP.Common.MPHelper.SendMail(System.Boolean,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String@,System.String,System.String,System.String)">
+            <summary>
+            Gửi email
+            </summary>
+            <param name="SSL"></param>
+            <param name="email"></param>
+            <param name="emailPasss"></param>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="emailTo"></param>
+            <param name="subject"></param>
+            <param name="content"></param>
+            <param name="sendMailMessage"></param>
+            <param name="nameOfEmail"></param>
+            <param name="nameOfToEmail"></param>
+            <param name="attachmentFilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MP.Common.MPHelper.GetIso8601WeekOfYear">
+            <summary>
+            Lấy số tuần hiện tại trong năm
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_Myyyy">
+            <summary>
+            Định dạng thời gian M/yyyy
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_MMyyyy">
+            <summary>
+            Định dạng thời gian MM/yyyy
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_103">
+            <summary>
+            Định dạng thời gian dd/MM/yyyy
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_101">
+            <summary>
+            Định dạng thời gian MM/dd/yyyy
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_121">
+            <summary>
+            yyyy-MM-dd
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.yyyyMMddHHmm00000">
+            <summary>
+            yyyy-MM-dd HH:mm:00:000
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.yyyyMMddHHmm59998">
+            <summary>
+            yyyy-MM-dd HH:mm:59:998
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_121HHmm">
+            <summary>
+            Định dạng yyyy-MM-dd
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_ddMMyyyyHHmm">
+            <summary>
+            Định dạng thời gian dd/MM/yyyy HH:mm
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_ddMMyyyyHHmm_FirstTime">
+            <summary>
+            Định dạng thời gian dd/MM/yyyy 00:00
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_ddMMyyyyHHmm_LastTime">
+            <summary>
+            Định dạng thời gian dd/MM/yyyy 23:59
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.DateTime_103Full">
+            <summary>
+            dd/MM/yyyy HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.ddMMyyyyHHmmssfff">
+            <summary>
+            dd/MM/yyyy HH:mm:ss.fff
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.ddMMyyyyHHmmssfff_FistTime">
+            <summary>
+            dd/MM/yyyy HH:mm:00.000
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.ddMMyyyyHHmmssfff_lastTime">
+            <summary>
+            dd/MM/yyyy HH:mm:23.998
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.yyyyMMdd">
+            <summary>
+            yyyyMMdd
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.yyyyMMddHHmmss">
+            <summary>
+            yyyyMMddHHmmss
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPFormat.Exten_ddMMyyyyHHmmss">
+            <summary>
+            ddMMyyyy HHmmss
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPStoreConst.VAS_GetRegisterByUser">
+            <summary>
+            Lịch sử đăng ký mới thuê bao theo tài khoản
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPStoreConst.VAS_GetRegister">
+            <summary>
+            Lịch sử đăng ký mới thuê bao 
+            </summary>
+        </member>
+        <member name="F:MP.Common.MPStoreConst.SP_CDR_PrefixRegis1Day">
+            <summary>
+            CDR PrefixRegis1Day
+            </summary>
+        </member>
+    </members>
+</doc>

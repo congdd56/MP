@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DPL - Quên mật khẩu</title>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Content/dist/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/Content/dist/ionicons/2.0.1/css/ionicons.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Content/dist/css/AdminLTE.min.css" />
+    <!-- Confirm -->
+    <link href="/Content/plugins/jqueryconfirm/jquery-confirm.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Content/plugins/Toastrjs/toastr.min.css" />
+</head>
+<body class="hold-transition lockscreen" style="overflow:hidden;">
+    <!-- Automatic element centering -->
+    <div class="lockscreen-wrapper" style="margin-top:5%">
+        <div class="lockscreen-logo">
+            <img src="~/Content/dist/Images/01-logo.png" style="width:100%" />
+            <a href="javascript:void(0);"><b>Lấy lại mật khẩu</b></a>
+        </div>
+        <!-- User name -->
+        <div class="lockscreen-name">Tên tài khoản</div>
+        <!-- START LOCK SCREEN ITEM -->
+        <div class="lockscreen-item number-one" style="margin: 10px auto 10px auto;">
+            <!-- lockscreen credentials (contains the form) -->
+            <div class="lockscreen-credentials" style="margin-left:0px">
+                <div class="input-group">
+                    <input type="text" class="form-control username" autocomplete="off" readonly
+                           onfocus="this.removeAttribute('readonly');" placeholder="Nhập tên tài khoản đăng nhập">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn username"><i class="fa fa-arrow-right text-muted"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.lockscreen credentials -->
+        </div>
+
+        <div class="lockscreen-item code-panel" style="margin: 10px auto 10px auto; display:none">
+            <!-- lockscreen credentials (contains the form) -->
+            <div class="lockscreen-credentials slide" style="margin-left:0px">
+                <div class="input-group">
+                    <input type="text" class="form-control code" autocomplete="off" readonly
+                           onfocus="this.removeAttribute('readonly');" placeholder="Nhập mã reset mật khẩu">
+                    <input type="password" class="form-control pw" autocomplete="off" readonly
+                           onfocus="this.removeAttribute('readonly');" placeholder="Mật khẩu mới">
+                    <input type="password" class="form-control npw" autocomplete="off" readonly
+                           onfocus="this.removeAttribute('readonly');" placeholder="Nhập lại mật khẩu">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn code"><i class="fa fa-arrow-right text-muted"></i></button>
+                    </div>
+                </div>
+                <code class="sp-code-helper" style="display:none"></code>
+            </div>
+            <!-- /.lockscreen credentials -->
+        </div>
+
+
+        <div class="text-center">
+            <a href="/">Hoặc đăng nhập với tài khoản khác</a>
+        </div>
+        <div class="lockscreen-footer text-center">
+            <strong>Copyright &copy; 2020 <a target="_blank" href="https://mptelecom.com.vn/">MP Telecom</a>.</strong> All rights reserved.
+        </div>
+    </div>
+    <!-- /.center -->
+    <!-- jQuery 2.2.3 -->
+    <script src="/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="/Content/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Confirm -->
+    <script src="/Content/plugins/jqueryconfirm/jquery-confirm.min.js" type='text/javascript'></script>
+    <!-- Toastr -->
+    <script src="~/Content/plugins/Toastrjs/toastr.min.js"></script>
+
+
+    <script src="~/modules/manager/forgotpw.js" type='text/javascript'></script>
+</body>
+</html>
+

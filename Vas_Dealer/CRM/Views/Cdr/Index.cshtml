@@ -1,0 +1,368 @@
+﻿@using MP.Common
+@{
+    ViewData["Title"] = "Đối soát CDR";
+    ViewData["SubTitle"] = "VAS Dealer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .dataRegis1Day tr td:nth-child(3), .dataRegis30 tr td:nth-child(3) {
+        width: 12% !important;
+    }
+</style>
+
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#regis30" data-toggle="tab"><i class="fa fa fa-user-plus text-green fa-lg"></i>&nbsp;Đăng ký mới mỗi 30 phút</a>
+        </li>
+        <li>
+            <a href="#regis1day" data-toggle="tab"><i class="fa fa fa-user text-green fa-lg"></i>&nbsp;Đăng ký mới mỗi ngày</a>
+        </li>
+        <li>
+            <a href="#renew1day" data-toggle="tab"><i class="fa fa-history text-red fa-lg"></i>&nbsp;Gia hạn mỗi ngày</a>
+        </li>
+        <li>
+            <a href="#cdrregis" data-toggle="tab"><i class="fa fa-area-chart text-green fa-lg"></i>&nbsp;CDR mời gói</a>
+        </li>
+        <li>
+            <a href="#cdrrenew" data-toggle="tab"><i class="fa fa-bar-chart text-red fa-lg"></i>&nbsp;CDR gia hạn</a>
+        </li>
+        <li class="pull-right header"><i class="fa fa-commenting-o"></i>Thông tin đối soát CDR</li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="regis30">
+            <div class="row">
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Từ ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm fromDateRegis30 input-datepicker" placeholder="dd/MM/yyyy" type="text" value="@DateTime.Now.ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Đến ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm toDateRegis30 input-datepicker" placeholder="dd/MM/yyyy" type="text" value="@DateTime.Now.ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã đại lý</label>
+                        <input class="form-control input-sm" id="txtBranchRegis30" placeholder="Mã đại lý" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã user</label>
+                        <input class="form-control input-sm" id="txtUserRegis30" placeholder="Mã user" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-flat btn-sm btn-success searchRegis30">
+                            <i class="fa fa-search"></i> Tìm kiếm
+                        </button>
+                        <button type="button" class="btn bg-blue-gradient btn-flat btn-sm excelRegis30"><i class="fa fa-cloud-download"></i>&nbsp;Xuất excel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header table-responsive">
+                    <h3 class="box-title"><i class="fa fa-clipboard"></i>&nbsp;Kết quả tìm kiếm</h3>
+                    <div class="box-tools pull-right mp-pointer-st" title="Chú thích">
+                        <i class="fa fa-question-circle fa-lg text-info" data-type="regis30"></i>
+                    </div>
+                    <table class="table table-bordered dataRegis30" style="width:100%">
+                        <thead>
+                            <tr role="row">
+                                <th>#</th>
+                                <th>Mã giao dịch</th>
+                                <th>Đại lý</th>
+                                <th>Dịch vụ</th>
+                                <th>UserName</th>
+                                <th>Họ tên</th>
+                                <th>Giá gói</th>
+                                <th>Thuê bao</th>
+                                <th>Giá thực trừ</th>
+                                <th>Thời gian đăng ký</th>
+                                <th>Trạng thái</th>
+                                <th style="width:150px">Lỗi</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="regis1day">
+            <div class="row">
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Từ ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm fromDateRegis1Day input-datepicker" placeholder="dd/MM/yyyy" type="text"
+                               value="@DateTime.Now.AddDays(-1).ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Đến ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm toDateRegis1Day input-datepicker" placeholder="dd/MM/yyyy" type="text"
+                               value="@DateTime.Now.ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã đại lý</label>
+                        <input class="form-control input-sm" id="txtBranchRegis1Day" placeholder="Mã đại lý" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã user</label>
+                        <input class="form-control input-sm" id="txtUserRegis1Day" placeholder="Mã user" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-flat btn-sm btn-success searchRegis1Day">
+                            <i class="fa fa-search"></i> Tìm kiếm
+                        </button>
+                        <button type="button" class="btn bg-blue-gradient btn-flat btn-sm excelRegis1Day"><i class="fa fa-cloud-download"></i>&nbsp;Xuất excel</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header table-responsive">
+                    <h3 class="box-title"><i class="fa fa-clipboard"></i>&nbsp;Kết quả tìm kiếm</h3>
+                    <div class="box-tools pull-right mp-pointer-st" title="Chú thích">
+                        <i class="fa fa-question-circle fa-lg text-info" data-type="regis1day"></i>
+                    </div>
+                    <table class="table table-bordered dataRegis1Day" style="width:100%">
+                        <thead>
+                            <tr role="row">
+                                <th>#</th>
+                                <th>Mã giao dịch</th>
+                                <th>Đại lý</th>
+                                <th>Dịch vụ</th>
+                                <th>Mã User</th>
+                                <th>Họ tên</th>
+                                <th>Giá gói</th>
+                                <th>Thuê bao</th>
+                                <th>Giá thực trừ</th>
+                                <th>Subs_Type</th>
+                                <th>Active_Date</th>
+                                <th>Thời gian đăng ký</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="renew1day">
+            <div class="row">
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Từ ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm fromDateRenew1Day input-datepicker" placeholder="dd/MM/yyyy"
+                               type="text" value="@DateTime.Now.AddDays(-1).ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Đến ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm toDateRenew1Day input-datepicker" placeholder="dd/MM/yyyy"
+                               type="text" value="@DateTime.Now.ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã đại lý</label>
+                        <input class="form-control input-sm" id="txtBranchRenew1Day" placeholder="Mã đại lý" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã user</label>
+                        <input class="form-control input-sm" id="txtUserRenew1Day" placeholder="Mã user" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-flat btn-sm btn-danger searchRenew1Day">
+                            <i class="fa fa-search"></i> Tìm kiếm
+                        </button>
+                        <button type="button" class="btn bg-blue-gradient btn-flat btn-sm excelRenew1Day"><i class="fa fa-cloud-download"></i>&nbsp;Xuất excel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header table-responsive">
+                    <h3 class="box-title"><i class="fa fa-clipboard"></i>&nbsp;Kết quả tìm kiếm</h3>
+                    <div class="box-tools pull-right mp-pointer-st" title="Chú thích">
+                        <i class="fa fa-question-circle fa-lg text-info" data-type="renew1day"></i>
+                    </div>
+                    <table class="table table-bordered dataRenew1Day" style="width:100%">
+                        <thead>
+                            <tr role="row">
+                                <th>#</th>
+                                <th>Mã giao dịch</th>
+                                <th>Đại lý</th>
+                                <th>Dịch vụ</th>
+                                <th>Mã User</th>
+                                <th>Họ tên</th>
+                                <th>Giá thực trừ</th>
+                                <th>Ngày đăng ký</th>
+                                <th>Ngày gia hạn</th>
+                                <th>Subs_Type</th>
+                                <th>Active_Date</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="cdrregis">
+            <div class="row">
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Từ ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm mpfromDateCDRRegis input-datepicker" placeholder="dd/MM/yyyy"
+                               type="text" value="@DateTime.Now.AddDays(-1).ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Đến ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm mptoDateCDRRegis input-datepicker" placeholder="dd/MM/yyyy"
+                               type="text" value="@DateTime.Now.AddDays(-1).ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã user</label>
+                        <input class="form-control input-sm" id="txtUserCDRRegis" placeholder="Mã user" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã đại lý</label>
+                        <input class="form-control input-sm" id="txtBranchCDRRegis" placeholder="Mã đại lý" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-flat btn-sm btn-success searchCDRRegis">
+                            <i class="fa fa-search"></i> Check CDR mời gói
+                        </button>
+                        <button type="button" class="btn bg-blue-gradient btn-flat btn-sm excelCDRRegis"><i class="fa fa-cloud-download"></i>&nbsp;Xuất excel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header table-responsive">
+                    <h3 class="box-title"><i class="fa fa-clipboard"></i>&nbsp;Kết quả CDR mời gói</h3>
+                    <div class="box-tools pull-right mp-pointer-st" title="Chú thích">
+                        <i class="fa fa-question-circle fa-lg text-info" data-type="cdrregis"></i>
+                    </div>
+                    <table class="table table-bordered CDRRegis" style="width:100%">
+                        <thead>
+                            <tr role="row">
+                                <th rowspan="2" class="vertical-middle">#</th>
+                                <th colspan="6" class="text-center">Minh phúc</th>
+                                <th colspan="7" class="text-center">VPNT</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Mã giao dịch</th>
+                                <th class="text-center">Thuê bao</th>
+                                <th class="text-center">Đại lý</th>
+                                <th class="text-center">Dịch vụ</th>
+                                <th>Tài khoản mời</th>
+                                <th>Ngày mời</th>
+                                <th class="text-center">Mã giao dịch</th>
+                                <th class="text-center">Thuê bao</th>
+                                <th class="text-center">Đại lý</th>
+                                <th class="text-center">Dịch vụ</th>
+                                <th class="text-center">Giá gói</th>
+                                <th class="text-center">Giá thực trừ</th>
+                                <th>Ngày đăng ký</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="cdrrenew">
+            <div class="row">
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Từ ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm fromDateCDRRenew input-datepicker" placeholder="dd/MM/yyyy"
+                               type="text" value="@DateTime.Now.AddDays(-1).ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Đến ngày <span class="text-danger">*</span></label>
+                        <input class="form-control input-sm toDateCDRRenew input-datepicker" placeholder="dd/MM/yyyy"
+                               type="text" value="@DateTime.Now.ToString(MPFormat.DateTime_103)">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã user</label>
+                        <input class="form-control input-sm" id="txtUserCDRRenew" placeholder="Mã user" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Mã đại lý</label>
+                        <input class="form-control input-sm" id="txtBranchCDRRenew" placeholder="Mã đại lý" type="text" value="">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-flat btn-sm btn-danger searchCDRRenew">
+                            <i class="fa fa-search"></i> Check CDR gia hạn
+                        </button>
+                        <button type="button" class="btn bg-blue-gradient btn-flat btn-sm excelCDRRenew"><i class="fa fa-cloud-download"></i>&nbsp;Xuất excel</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header table-responsive">
+                    <h3 class="box-title"><i class="fa fa-clipboard"></i>&nbsp;Kết quả CDR gia hạn</h3>
+                    <div class="box-tools pull-right mp-pointer-st" title="Chú thích">
+                        <i class="fa fa-question-circle fa-lg text-info" data-type="cdrrenew"></i>
+                    </div>
+                    <table class="table table-bordered CDRRenew" style="width:100%">
+                        <thead>
+                            <tr role="row">
+                                <th>#</th>
+                                <th>Mã giao dịch</th>
+                                <th>Đại lý</th>
+                                <th>Dịch vụ</th>
+                                <th>Thuê bao</th>
+                                <th>Phí</th>
+                                <th>Ngày gia hạn</th>
+                                <th>Ngày đăng ký</th>
+                                <th>SubsType</th>
+                                <th>Ngày kích hoạt</th>
+                                <th>Người tạo</th>
+                                <th>Thời gian</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/modules/cdr/cdr.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>

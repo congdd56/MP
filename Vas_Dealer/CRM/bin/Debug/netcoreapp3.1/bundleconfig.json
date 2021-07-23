@@ -1,0 +1,38 @@
+[
+  {
+    "outputFileName": "wwwroot/Content/build/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/Content/bootstrap/css/bootstrap.min.css",
+      "wwwroot/Content/dist/font-awesome/4.5.0/css/font-awesome.min.css",
+      "wwwroot/Content/dist/ionicons/2.0.1/css/ionicons.min.css",
+      "wwwroot/Content/plugins/select2/select2.min.css",
+      "wwwroot/Content/dist/css/AdminLTE.min.css",
+      "wwwroot/Content/plugins/jQuery/jquery-ui.min.css",
+      "wwwroot/Content/dist/css/jquery.datetimepicker.css",
+      "wwwroot/Content/dist/css/MPCSSTemplate.css",
+      "wwwroot/Content/plugins/Toastrjs/toastr.min.css",
+      "wwwroot/Content/plugins/jqueryconfirm/jquery-confirm.min.css",
+      "wwwroot/Content/plugins/datatables/jquery.dataTables.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/Content/build/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/Content/plugins/select2/select2.full.min.js",
+      "wwwroot/Content/plugins/iCheck/icheck.min.js",
+      "wwwroot/Content/bootstrap/js/bootstrap.min.js",
+      "wwwroot/Content/dist/js/jquery.datetimepicker.full.js",
+      "wwwroot/Content/dist/js/datepicker-vi.js",
+      "wwwroot/Content/plugins/jqueryconfirm/jquery-confirm.min.js",
+      "wwwroot/Content/dist/js/cims.convertDateHelper.js",
+      "wwwroot/Content/plugins/fastclick/fastclick.js",
+      "wwwroot/Content/plugins/slimScroll/jquery.slimscroll.min.js",
+      "wwwroot/Content/plugins/Toastrjs/toastr.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

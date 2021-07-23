@@ -1,0 +1,239 @@
+﻿@using Newtonsoft.Json
+@using System.Security.Claims
+@using VAS.Dealer.Models.CRM
+@using MP.Common;
+
+@{
+    var claimsIdentity = User.Identity as ClaimsIdentity;
+    var currentUser = JsonConvert.DeserializeObject<UserLogonModel>(claimsIdentity.FindFirst("UserData").Value);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#317EFB" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Quay số may mắn | MP - CRM | MPTelecom .</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" href="~/Content/build/css/site.min.css?v=@GetType().Assembly.GetName().Version.ToString()" />
+
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="~/Content/plugins/iCheck/all.css">
+    <link rel="stylesheet" href="~/Content/dist/css/skins/_all-skins.min.css" />
+
+    <!-- jQuery 2.2.3 -->
+    <script type='text/javascript' src="~/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type='text/javascript' src="~/Content/plugins/jQuery/jquery-ui.min.js"></script>
+    <!-- Select2 -->
+    <script type='text/javascript' src="~/Content/plugins/select2/select2.full.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script type='text/javascript' src="~/Content/plugins/iCheck/icheck.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script type='text/javascript' src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="~/Content/dist/js/jquery.datetimepicker.full.js"></script>
+    <script type='text/javascript' src="~/Content/dist/js/datepicker-vi.js"></script>
+
+    <script type="text/javascript" src="~/Content/plugins/datatables/jquery.dataTables.js"></script>
+    <!-- Confirm -->
+    <script type='text/javascript' src="~/Content/plugins/jqueryconfirm/jquery-confirm.min.js"></script>
+
+    <script type='text/javascript' src="~/Content/dist/js/cims.convertDateHelper.js"></script>
+    <!-- FastClick -->
+    <script type='text/javascript' src="~/Content/plugins/fastclick/fastclick.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script type='text/javascript' src="~/Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- Toastr -->
+    <script type='text/javascript' src="~/Content/plugins/Toastrjs/toastr.min.js"></script>
+    <!-- FastClick -->
+    <script type='text/javascript' src="~/Content/dist/js/app.min.js"></script>
+    <script type='text/javascript' src="~/Content/dist/js/demo.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>
+    <script type='text/javascript' src="~/Content/dist/js/MasterPage.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>
+    <!-- Kết nối Signarl -->
+    <script type='text/javascript' src="~/Content/dist/js/signalr/dist/browser/signalr.js"></script>
+    <script type='text/javascript' src="~/Content/dist/js/signalr/events.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>
+</head>
+<body class="sidebar-mini fixed skin-green-light">
+    <input type="hidden" id="hidToken" value="@currentUser.TokenData.Accesstoken" />
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="/" class="logo"> Quay số may mắn
+                <span class="logo-lg">Quay số - <b>May mắn</b></span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-globe"></i>
+                                <span class="label label-warning notify-ringing-number">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header notify-ringing-number-member"></li>
+                                <li>
+                                    <ul class="menu" id="ul-notify-ticket"></ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bolt"></i>
+                                <span class="label label-danger notify-deadline-number">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header notify-deadline-number-member"></li>
+                                <li>
+                                    <ul class="menu" id="ul-deadline-ticket"></ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success label-warning notify-service-number">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header notify-service-number-member"></li>
+                                <li>
+                                    <ul class="menu" id="ul-notify-service"></ul>
+                                </li>
+                                <li class="footer"><a href="#">Xem tất cả</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/Content/dist/img/1498552373_user.png" class="user-image" alt="User Image">
+                                <span class="hidden-xs">@currentUser.UserName</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="/Content/dist/img/1498552373_user.png" class="img-circle" alt="User Image">
+                                    <p class="name">
+                                        @currentUser.FullName
+                                    </p>
+                                    <p class="department"><small>@Html.Raw(string.Join("<br/>", currentUser.RoleCodes))</small></p>
+                                </li>
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="/account/info" class="btn btn-default btn-flat btn-flat btn-sm">
+                                            <i class="fa fa-info-circle text-info"></i>&nbsp;Thông tin cá nhân
+                                        </a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a class="btn btn-default btn-flat btn-sm" href="/account/logout">
+                                            <i class="fa fa-share-square-o text-red"></i>&nbsp;Đăng xuất
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="/Content/dist/img/1498552373_user.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>@currentUser.FullName</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+                    </div>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="header">DANH SÁCH CHỨC NĂNG</li>
+                    @if (currentUser.Permissions.Contains(MPConst.vas_register))
+                    {
+                        <li class="@(Context.Request.Path == "/register" ? "active" : "")">
+                            <a href="/vas/register">
+                                <i class="fa fa-user-plus"></i> <span>Quay số may mắn</span>
+                                <span class="pull-right-container">
+                                    <small class="label pull-right bg-blue-active">new</small>
+                                </span>
+                            </a>
+                        </li>
+                    } 
+                    <li class="@(Context.Request.Path == "/vas/hisregis" ? "active" : "")">
+                        <a href="/vas/hisregis">
+                            <i class="fa fa-registered"></i> <span>Bảng xếp hạng</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right bg-green">new</small>
+                            </span>
+                        </a>
+                    </li> 
+                     
+
+                    @if (currentUser.Permissions.Contains(MPConst.view_account)
+                        || currentUser.Permissions.Contains(MPConst.view_role)
+                        || currentUser.Permissions.Contains(MPConst.view_category)
+                        || currentUser.Permissions.Contains(MPConst.view_login_account)
+                        || currentUser.Permissions.Contains(MPConst.view_manager_customer))
+                    {
+                        <li class="treeview @(Context.Request.Path.ToString().Contains("/manager") ? "active menu-open" : "")">
+                            <a href="#">
+                                <i class="fa fa-th"></i> <span>Quản trị</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                    <small class="label pull-right bg-blue">3</small>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (currentUser.Permissions.Contains(MPConst.view_account) || currentUser.Permissions.Contains(MPConst.view_role) || currentUser.Permissions.Contains(MPConst.view_category))
+                                {
+                                    <li class="@(Context.Request.Path == "/manager" ? "active" : "")">
+                                        <a href="/manager"><i class="fa fa-circle-o"></i> Tài khoản, quyền..</a>
+                                    </li>
+                                } 
+                                @if (currentUser.Permissions.Contains(MPConst.view_login_account))
+                                {
+                                    <li class="@(Context.Request.Path == "/manager/useronline" ? "active" : "")">
+                                        <a href="/manager/useronline"><i class="fa fa-circle-o"></i> Tài khoản đăng nhập</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    <i class='fa fa-folder-open-o'></i>&nbsp;@ViewData["Title"]
+                    <small>@ViewData["SubTitle"]</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/"><i class="fa fa-dashboard"></i>Trang chủ</a></li>
+                    <li><a href="@Context.Request.Path">@ViewData["Title"]</a></li>
+                </ol>
+            </section>
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <i>Develop by:</i> MP love Team
+                <b>Version @GetType().Assembly.GetName().Version.ToString()</b>
+            </div>
+            <strong>Copyright &copy; 2020 <a href="https://mptelecom.com.vn/">MP Telecom</a>.</strong> All rights reserved.
+        </footer>
+        <aside class="control-sidebar control-sidebar-dark">
+            <div class="tab-content">
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿@using Newtonsoft.Json
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Quản lý dealer";
+    ViewData["SubTitle"] = "VAS dealer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var claimsIdentity = User.Identity as ClaimsIdentity;
+    var lstPermission = JsonConvert.DeserializeObject<List<string>>(Context.User.Claims.First(c => c.Type == "permission").Value);
+    var PermissionReceive = JsonConvert.DeserializeObject<List<string>>(Context.User.Claims.First(c => c.Type == "PermissionReceive").Value);
+
+}
+
+<link href="~/modules/VOC/Receive.css" rel="stylesheet" />
+
+<div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title clearfix"><i class="ion ion-clipboard"></i> Danh sách</h3>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Thuê bao <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control input-sm" placeholder="Nhập host" />
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Đại lý</label>
+                    <select class="form-control select2">
+                        <option value="100035972">MPTEST</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Dịch vụ</label>
+                    <select class="form-control select2">
+                        <option value="100035972">MPTEST</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <button type="button" class="btn btn-sm btn-flat btn-success"><i class="fa fa-search"></i> Tra cứu</button>
+                </div>
+            </div>
+        </div>
+        <div class="box box-warning">
+            <div class="box-header">
+                <h3 class="box-title clearfix"><i class="ion ion-clipboard"></i> Kết quả</h3>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th>Thời gian đăng ký</th>
+                            <th>Thời gian hủy</th>
+                            <th>Thời gian gia hạn</th>
+                            <th>Thời gian hết hạn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

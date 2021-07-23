@@ -1,0 +1,311 @@
+﻿@model List<VAS.Dealer.Models.CC.AccountModel>
+@using MP.Common;
+@using Newtonsoft.Json
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Quản trị";
+    ViewData["SubTitle"] = "Tạo mới, chỉnh sửa thông tin người dùng, cấu hình hệ thống..";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var claimsIdentity = User.Identity as ClaimsIdentity;
+    var lstPermission = JsonConvert.DeserializeObject<List<string>>(Context.User.Claims.First(c => c.Type == "permission").Value);
+}
+
+@if (lstPermission.Any(x => x.Contains("view_account")))
+{
+    <script src="~/modules/manager/category.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>
+}
+@if (lstPermission.Any(x => x.Contains("view_category")))
+{
+    <link rel="stylesheet" href="~/Content/plugins/jsTree/css/proton/style.min.css" />
+    <script src="~/Content/plugins/jsTree/js/jstree.min.js"></script>
+}
+@if (lstPermission.Contains("view_area"))
+{
+    <script src="~/modules/manager/area.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>
+}
+
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        @if (lstPermission.Any(x => x.Contains("view_account")))
+        {
+            <li class="active"><a href="#user" data-toggle="tab"><i class="fa fa-user text-red"></i>&nbsp;Tài khoản</a></li>
+        }
+        @if (lstPermission.Any(x => x.Contains("view_role")))
+        {
+            <li><a href="#role" data-toggle="tab"><i class="fa fa-mortar-board text-green"></i>&nbsp;Phân quyền</a></li>
+        } 
+        @if (lstPermission.Contains("view_area"))
+        {
+            <li><a href="#panel-area" data-toggle="tab"><i class="fa fa-globe text-green"></i>&nbsp;Khu vực</a></li>
+        }
+        @if (lstPermission.Any(x => x.Contains("add_account")) || lstPermission.Any(x => x.Contains("add_role")))
+        {
+            <li class="pull-right">
+                <div class="input-group-btn" style="display: block">
+                    <button type="button" class="btn btn-flat bg-green-active btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="fa fa-caret-down"></span>
+                        Thêm mới
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        @if (lstPermission.Any(x => x.Contains("add_account")))
+                        {
+                            <li>
+                                <a href="javascript:void(0)" id="btnAddModal" class="text-decoration-none dropdown-item">
+                                    <i class="fa fa-user text-red"></i>&nbsp; Tạo tài khoản
+                                </a>
+                            </li>
+                        }
+                        @if (lstPermission.Any(x => x.Contains("add_role")))
+                        {
+                            <li>
+                                <a href="javascript:void(0)" id="btnAddRoleModal" class="text-decoration-none dropdown-item">
+                                    <i class="fa fa-mortar-board text-green"></i>&nbsp;Tạo mới quyền
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </li>
+        }
+    </ul>
+    <div class="tab-content">
+        @if (lstPermission.Contains(MPConst.view_account))
+        {
+            <div class="tab-pane active" id="user">
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <table class="table table-bordered tbUser mb-3" data-tablesaw-mode="stack" id="tblUser">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tài khoản</th>
+                                    <th>Quyền</th>
+                                    <th class="text-center">Công cụ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbdUser">
+                                @{
+                                    int i = 1;
+                                    foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td style="vertical-align: middle">@i</td>
+                                            <td style="vertical-align: middle">
+                                                <span class="text-info font-bold">
+                                                    @if (item.SignalStatus)
+                                                    {
+                                                        <i class="fa fa-circle text-success"></i>
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="fa fa-circle text-gray"></i>
+                                                    }
+                                                    @item.UserName
+                                                </span><br />
+                                                @item.FullName
+                                            </td>
+                                            <td style="vertical-align: middle">
+                                                @foreach (var itemRole in item.Roles)
+                                                {
+                                                    <span class="badge bg-yellow">@itemRole</span>
+                                                }
+                                            </td> 
+                                            <td class="text-center" style="vertical-align: middle">
+                                                @if (lstPermission.Any(x => x.Contains("active_account")))
+                                                {
+                                                    @if (item.IsLock == true)
+                                                    {
+                                                        <a href="#" title="Bật/tắt user">
+                                                            <i class="fa fa-toggle-off fa-lg isLockUser mx-1" alt="Bật/Tắt User" check="true" uid="@item.Id"></i>
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="#" title="Bật/tắt user">
+                                                            <i class="fa fa-toggle-on fa-lg isLockUser mx-1 text-info" alt="Bật/Tắt User" check="false" uid="@item.Id"></i>
+                                                        </a>
+                                                    }
+                                                }
+                                                @if (lstPermission.Any(x => x.Contains("reset_account")))
+                                                {
+                                                    <a title="Reset Mật Khẩu">
+                                                        <i class="fa fa-refresh mp-pointer-st text-danger fa-lg resetPassword pointer mx-1" uid="@item.Id"></i>
+                                                    </a>@:&nbsp;&nbsp;
+                                                }
+                                                @if (lstPermission.Any(x => x.Contains("edit_account")))
+                                                {
+                                                    <span class="editUser" uid="@item.Id">
+                                                        <i class="fa fa-edit fa-lg text-primary mp-pointer-st pointer mx-1" alt="delete" title="Sửa tài khoản"></i>
+                                                    </span>@:&nbsp;&nbsp;
+                                                }
+                                                @if (lstPermission.Any(x => x.Contains("delete_account")))
+                                                {
+                                                    <span class="deleteAccount" uid="@item.Id">
+                                                        <i class="fa fa-trash-o fa-lg text-danger mp-pointer-st pointer mx-1" alt="delete" title="Xóa tài khoản"></i>
+                                                    </span>
+                                                }
+                                            </td>
+                                        </tr>
+                                        i = i + 1;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (lstPermission.Any(x => x.Contains("view_role")))
+        {
+            <div class="tab-pane" id="role">
+                @if (!lstPermission.Any(x => x.Contains("view_account")))
+                {
+                    <div class="row mt-2">
+                        @if (lstPermission.Any(x => x.Contains("add_role")))
+                        {
+                            <button id="btnAddRoleModal" class="btn bg-green btn-sm btn-flat" type="button">
+                                <i class="fa glyphicon-plus"></i>&nbsp;Thêm mới quyền
+                            </button>
+                        }
+                        <div class="col-md-5">
+                            <table class="tablesaw table-bordered tablesaw-stack  mb-2" id="tblRole">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên quyền</th>
+                                        <th>Số lượng tài khoản</th>
+                                        <th>Công cụ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbdRole">
+                                    @{
+                                        int j = 1;
+                                        @if (ViewBag.lstRole != null)
+                                        {
+                                            @foreach (var item in ViewBag.lstRole)
+                                            {
+                                                <tr>
+                                                    <td>@j</td>
+                                                    <td class="@item.Id">@item.Name</td>
+                                                    <td class="detailUserByRole" uid="@item.Id"><a style="color:blue;" href="#">@item.CountAgent</a></td>
+                                                    <td>
+
+                                                        @if (lstPermission.Any(x => x.Contains("edit_role")))
+                                                        {
+                                                            <span class="editRole" uid="@item.Id">
+                                                                <i class="fa fa-edit fa-lg text-primary mp-pointer-st pointer" alt="delete" title="Sửa nhóm quyền"></i>
+                                                            </span>
+                                                        }
+                                                        @if (lstPermission.Any(x => x.Contains("delete_role")))
+                                                        {
+                                                            <span class="deleteRole" uid="@item.Id">
+                                                                <i class="fa far fa-trash-alt fa-lg text-danger mp-pointer-st pointer" alt="delete" title="Xóa nhóm quyền"></i>
+                                                            </span>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                                j = j + 1;
+                                            }
+                                        }
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-5 detail-user-role" style="display:none;">
+                            <div class="text-center">
+                                <div class="card-body-t">
+                                    <table class="tablesaw table-bordered tablesaw-stack  mb-2" id="tableDetailRole">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Tên đăng nhập</th>
+                                                <th>Họ tên</th>
+                                                <th>Email</th>
+                                                <th>Quản lý</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbdDetailUserByRole">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <table class="tablesaw table-bordered tablesaw-stack mb-2" id="tblRole">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên quyền</th>
+                                        <th>Số lượng tài khoản</th>
+                                        <th>Công cụ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbdArea">
+                                    @{
+                                        int j = 1;
+                                        @if (ViewBag.lstRole != null)
+                                        {
+                                            @foreach (var item in ViewBag.lstRole)
+                                            {
+                                                <tr>
+                                                    <td>@j</td>
+                                                    <td class="@item.Id">@item.Name</td>
+                                                    <td class="detailUserByRole" uid="@item.Id"><a style="color:blue;" href="#">@item.CountAgent</a></td>
+                                                    <td>
+
+                                                        @if (lstPermission.Any(x => x.Contains("edit_role")))
+                                                        {
+                                                            <span class="editRole" uid="@item.Id">
+                                                                <i class="fa fa-edit fa-lg text-primary mp-pointer-st" alt="delete" title="Sửa nhóm quyền"></i>
+                                                            </span>
+                                                        }
+                                                        @if (lstPermission.Any(x => x.Contains("delete_role")))
+                                                        {
+                                                            <span class="deleteRole" uid="@item.Id">
+                                                                <i class="fa far fa-trash-alt fa-lg text-danger mp-pointer-st" alt="delete" title="Xóa nhóm quyền"></i>
+                                                            </span>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                                j = j + 1;
+                                            }
+                                        }
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-7 detail-user-role" style="display:none;">
+                            <div class="card-body-t">
+                                <table class="tablesaw table-bordered tablesaw-stack mb-2" id="tableDetailRole">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Tên đăng nhập</th>
+                                            <th>Họ tên</th>
+                                            <th>Email</th>
+                                            <th>Quản lý</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbdDetailUserByRole">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        } 
+    </div>
+</div>
+<script src="~/modules/Manager.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>
+

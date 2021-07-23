@@ -1,0 +1,96 @@
+﻿@model VAS.Dealer.Models.CRM.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthenLayout.cshtml";
+}
+
+<form action="/Account/Login" method="post">
+    <div class="login-box">
+        <div class="login-box-body">
+            <p class="login-box-msg">
+                <img src="/Content/dist/img/IMG_Logo_login_1807.png" style="height: 150px; width: 100%;" />
+            </p>
+            <div class="form-group has-feedback">
+                @Html.TextBox("UserName", Model.UserName, new { @class = "form-control", @required = "", @placeholder = "Tài khoản" })
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBox("Password", Model.Password, new { @type = "password", @class = "form-control", @required = "", @placeholder = "Mật khẩu" })
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            @Html.Hidden("returnUrl", Context.Request.Query["returnUrl"].ToString())
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <span id="lblError"></span>
+                </div>
+                <div class="col-xs-12">
+                    <button type="submit" style="float: left" tabindex="-1"
+                            class="btn btn-primary btn-block btn-flat">
+                        Đăng nhập
+                    </button>
+                </div>
+            </div>
+            <br />
+            <a href="/account/forgotpw">Quên mật khẩu</a><br />
+        </div>
+    </div>
+</form>
+
+<script>
+    $("input").bind('keyup paste', function () {
+        $("#spanMessage").text('');
+    });
+    $(function () {
+        var item = $('.hidden-message');
+        if (item && item.val() === 'InUse') {
+            $.confirm({
+                title: 'Thông báo',
+                content: 'Tài khoản đang được sử dụng<br/>Xác nhận logout tài khoản?',
+                type: 'red',
+                typeAnimated: true,
+                buttons: {
+                    btn1: {
+                        text: 'Logout tài khoản đang sử dụng',
+                        btnClass: 'btn-primary',
+                        action: function () {
+                            $.ajax({
+                                type: "GET",
+                                url: "/Account/ActiveLogOut/" + $('#UserName').val() + "/" + ext,
+                                success: function (msg) {
+                                    $.confirm({
+                                        title: 'Thông báo',
+                                        content: 'Yêu cầu gửi thành công',
+                                        type: 'green',
+                                        typeAnimated: true,
+                                        buttons: {
+                                            btn1: {
+                                                text: 'OK',
+                                                btnClass: 'btn-primary'
+                                            }
+                                        }
+                                    });
+                                },
+                                complete: function (msg) {
+                                }
+                            });
+                        }
+                    },
+                    btn2: {
+                        text: 'Hủy'
+                    }
+                }
+            });
+        }
+        //Confirm khi tài khoản đang được sử dụng
+
+
+        $('body').keypress(function (e) {
+            // Enter pressed?
+            if (e.which == 10 || e.which == 13) {
+                $(this).find('button[type=submit]').click();
+            }
+        });
+
+
+    });
+</script>

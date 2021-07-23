@@ -1,0 +1,8 @@
+2021-05-28T15:09:13.8427967+07:00 80000154-0002-de00-b63f-84710c7967bb [ERR] Timeout waiting for WinSCP to respond (0e4a5cf9)
+2021-05-28T15:09:14.7461014+07:00 80000154-0002-de00-b63f-84710c7967bb [ERR] Client does not have permission to submit mail to this server. The server response was: 4.7.0 STARTTLS required (a600cf84)
+System.Net.Mail.SmtpException: Client does not have permission to submit mail to this server. The server response was: 4.7.0 STARTTLS required
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at VAS.Dealer.Services.EmailServices.SendWarningFtpError(String exception) in D:\MinhPhuc\Projects\2021\Vas_Dealer\CRM\Services\EmailServices.cs:line 127

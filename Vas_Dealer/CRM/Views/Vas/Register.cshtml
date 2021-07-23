@@ -1,0 +1,35 @@
+﻿@using Newtonsoft.Json
+@using MP.Common
+@model VAS.Dealer.Models.VAS.RegisterIndeModel
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Vòng quay may mắn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var claimsIdentity = User.Identity as ClaimsIdentity;
+    var lstPermission = JsonConvert.DeserializeObject<List<string>>(Context.User.Claims.First(c => c.Type == "permission").Value);
+}
+
+
+<div class="box box-info">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="nav-tabs-custom tab-info"> 
+                <div class="tab-content">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-flat btn-sm btn-success regis" style="width: 18%; height: 8vh;">
+                                <i class="fa fa-save"></i> Quay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+</div>
+
+<script src="~/modules/vas/registered.js?v=@GetType().Assembly.GetName().Version.ToString()"></script>
